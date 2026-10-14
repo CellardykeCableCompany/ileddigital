@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hiCams</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The header is the same on every page. aria-current marks where you
+       are, and style.css colours that link magenta. -->
+  <header class="masthead">
+    <a class="name" href="../index.html">jon rogers</a>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="../projects.html" aria-current="true">projects</a></li>
+        <li><a href="../cv.html">cv</a></li>
+        <li><a href="../publications.html">publications</a></li>
+        <li><a href="../maker.html">maker</a></li>
+        <li><a href="../thoughts.html">thoughts</a></li>
+        <li><a href="../open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <picture class="logo">
+      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+    </picture>
+  </header>
+
+  <main id="main">
+
+    <!--
+      The words on this page are Jon's, exactly as written.
+      The image alt text describes the picture for people who can't see it.
+      It is a draft written by Claude: please rewrite it in your words.
+    -->
+
+    <h1>hiCams</h1>
+
+    <div class="lead">
+      <img class="project-image" src="../images/projects/hicams-720.jpg"
+        srcset="../images/projects/hicams-720.jpg 720w, ../images/projects/hicams-863.jpg 863w"
+        sizes="(min-width: 48rem) 37vw, 100vw"
+        width="863" height="1134"
+        alt="A group of hiCams: small round cameras and screens on wire legs, gathered around a twig sculpture.">
+      <p>hiCams are a private network of interconnected cameras. A camera on one hiCam sends an image to a screen on another. Within the network each pair provides a one-to-one viewing experience. Connection between them is direct — there is no third party (a server) that mediates the communication. Based on a Raspberry Pi Zero, cheap(ish) open-source components and the home 3D printing of parts, we aspired to make hiCams an accessible open technology, distinct in function, aesthetic and ethos to equivalent commercial offers.</p>
+      <p class="project-link"><a href="https://hicraftnorthumbria.org/craft-investigations/hicams/">https://hicraftnorthumbria.org/craft-investigations/hicams/</a></p>
+    </div>
+
+    <section class="ledger" aria-labelledby="collaborated">
+      <h2 id="collaborated">collaborated with</h2>
+      <ul class="people">
+        <li><a href="https://www.northumbria.ac.uk/about-us/our-staff/m/justin-marshall/">Justin Marshall</a></li>
+        <li><a href="https://www.jaynewallace.com/">Jayne Wallace</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

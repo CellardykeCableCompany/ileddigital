@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>projects</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The header is the same on every page. aria-current marks where you
+       are, and style.css colours that link magenta. -->
+  <header class="masthead">
+    <a class="name" href="index.html">jon rogers</a>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="projects.html" aria-current="page">projects</a></li>
+        <li><a href="cv.html">cv</a></li>
+        <li><a href="publications.html">publications</a></li>
+        <li><a href="maker.html">maker</a></li>
+        <li><a href="thoughts.html">thoughts</a></li>
+        <li><a href="open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <picture class="logo">
+      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+    </picture>
+  </header>
+
+  <main id="main">
+
+    <h1>resisting big tech through <span class="accent">making</span></h1>
+
+    <!--
+      The project grid. Each card is a square picture and a name, and the
+      whole card links to that project's own page in the projects folder.
+      To add a project: make its page in projects/, put a 480 x 480 picture
+      in images/projects/, then copy one <li> below and change it.
+      The pictures have empty alt text because the name under each one
+      already says what it is.
+    -->
+    <section class="projects" aria-label="Projects">
+      <ul>
+        <li>
+          <a href="projects/pegbits.html">
+            <img src="images/projects/pegbits-thumb.jpg" width="480" height="480" alt="">
+            <span class="title">pegBits</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects/selfreflector.html">
+            <img src="images/projects/selfreflector-thumb.jpg" width="480" height="480" alt="">
+            <span class="title">SelfReflector</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects/hicams.html">
+            <img src="images/projects/hicams-thumb.jpg" width="480" height="480" alt="">
+            <span class="title">hiCams</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

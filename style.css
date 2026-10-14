@@ -149,8 +149,9 @@ main {
   border-bottom: 0.5px solid var(--ink);
 }
 
-/* The page you're on shows in magenta in the menu. */
-.masthead a[aria-current="page"] {
+/* The page you're on shows in magenta in the menu. On a single
+   project's page, "projects" stays magenta too. */
+.masthead a[aria-current] {
   color: var(--magenta);
 }
 
@@ -212,7 +213,62 @@ main {
 }
 
 
-/* ---------- Text pages: cv and publications ----------
+/* A word picked out in magenta, as in the projects headline. */
+.accent {
+  color: var(--magenta);
+}
+
+
+/* ---------- Projects grid ----------
+   Square pictures with names, three across, in the right-hand column
+   under the menu. On phones it drops to two across. */
+
+.projects {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  column-gap: var(--gutter);
+  margin-top: max(3rem, calc(6.8 * var(--u)));
+}
+
+.projects ul {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75em 0.6em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projects a {
+  display: block;
+}
+
+.projects img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.projects .title {
+  display: block;
+  margin-top: 0.5em;
+}
+
+
+/* ---------- A single project's page ---------- */
+
+.project-image {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.project-link {
+  overflow-wrap: anywhere;
+}
+
+
+/* ---------- Text pages: cv, publications and projects ----------
    Text sits in the right-hand column, the same width as the menu,
    which keeps lines a comfortable length to read. Dates hang in the
    left-hand column, against the gap. */
@@ -227,8 +283,25 @@ main {
 
 .lead > *,
 .ledger h2,
-.ledger .prose {
+.ledger .prose,
+.ledger .people {
   grid-column: 2;
+}
+
+.ledger .people {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Names are a simple list, not dated entries, so they skip the
+   two-column date layout that other lists here use. */
+.ledger .people li {
+  display: block;
+}
+
+.ledger .people li + li {
+  margin-top: 0.3em;
 }
 
 .lead {
@@ -314,6 +387,15 @@ main {
     grid-row: 2;
   }
 
+  .projects {
+    grid-template-columns: var(--right);
+    justify-content: end;
+  }
+
+  .projects ul {
+    grid-column: 1;
+  }
+
   /* Text pages become one column, with each date above its entry. */
   .lead,
   .ledger,
@@ -324,6 +406,7 @@ main {
   .lead > *,
   .ledger h2,
   .ledger .prose,
+  .ledger .people,
   .ledger .when,
   .ledger .what {
     grid-column: 1;
@@ -354,10 +437,14 @@ main {
   }
 }
 
-/* On phones, equal margins on both sides. */
+/* On phones, equal margins on both sides, and two projects across. */
 @media (max-width: 40rem) {
   .masthead,
   main {
     padding-inline: 1.25rem;
+  }
+
+  .projects ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
