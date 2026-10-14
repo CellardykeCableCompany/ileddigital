@@ -32,6 +32,9 @@
      33rem, the room the menu needs at its smallest text size. */
   --right: max(calc(37.14 * var(--u)), 33rem);
 
+  /* The gap between the left and right columns. */
+  --gutter: calc(2.97 * var(--u));
+
   color-scheme: light;
 }
 
@@ -146,6 +149,11 @@ main {
   border-bottom: 0.5px solid var(--ink);
 }
 
+/* The page you're on shows in magenta in the menu. */
+.masthead a[aria-current="page"] {
+  color: var(--magenta);
+}
+
 .logo {
   grid-column: 1;
   grid-row: 2;
@@ -180,7 +188,7 @@ main {
 .future {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--right);
-  column-gap: calc(2.97 * var(--u));
+  column-gap: var(--gutter);
   margin: max(3rem, calc(6.8 * var(--u))) 0 0;
 }
 
@@ -204,6 +212,87 @@ main {
 }
 
 
+/* ---------- Text pages: cv and publications ----------
+   Text sits in the right-hand column, the same width as the menu,
+   which keeps lines a comfortable length to read. Dates hang in the
+   left-hand column, against the gap. */
+
+.lead,
+.ledger,
+.ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  column-gap: var(--gutter);
+}
+
+.lead > *,
+.ledger h2,
+.ledger .prose {
+  grid-column: 2;
+}
+
+.lead {
+  margin-top: max(2rem, calc(3 * var(--u)));
+}
+
+.lead p,
+.prose p {
+  margin: 0 0 1em;
+}
+
+.ledger {
+  margin-top: max(2.5rem, calc(4 * var(--u)));
+}
+
+/* Section headings have a hairline under them, like the menu. */
+.ledger h2 {
+  margin: 0 0 0.9em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: normal;
+  border-bottom: 0.5px solid var(--ink);
+}
+
+.ledger ol {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ledger li + li {
+  margin-top: 0.75em;
+}
+
+.ledger .when {
+  grid-column: 1;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ledger .what {
+  grid-column: 2;
+}
+
+.elsewhere {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links inside text are underlined, so they stand out from the words
+   around them. Long web addresses are allowed to break anywhere,
+   so they never push past the edge of the column. */
+.lead a,
+.ledger a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+
 /* ---------- Narrower windows ---------- */
 
 /* Below about 880px there's no room for the caption beside the
@@ -223,6 +312,26 @@ main {
   .future img {
     grid-column: 1;
     grid-row: 2;
+  }
+
+  /* Text pages become one column, with each date above its entry. */
+  .lead,
+  .ledger,
+  .ledger li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lead > *,
+  .ledger h2,
+  .ledger .prose,
+  .ledger .when,
+  .ledger .what {
+    grid-column: 1;
+  }
+
+  .ledger .when {
+    justify-self: start;
+    text-align: left;
   }
 }
 
