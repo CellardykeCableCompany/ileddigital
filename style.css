@@ -1,5 +1,9 @@
 /* ileddigital: the only stylesheet.
-   No web fonts, no JavaScript. Everything here is plain CSS. */
+   No web fonts, no JavaScript. Everything here is plain CSS.
+
+   Every page links to this file as style.css?v=7. Browsers keep a copy
+   for a while, so when this file changes, raise that number in each
+   page's <link> line too. That makes browsers fetch the new version. */
 
 
 /* ---------- Settings ----------
