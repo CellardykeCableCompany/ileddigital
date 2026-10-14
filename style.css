@@ -1,0 +1,254 @@
+/* ileddigital: the only stylesheet.
+   No web fonts, no JavaScript. Everything here is plain CSS. */
+
+
+/* ---------- Settings ----------
+   Change a value here and it changes everywhere it's used. */
+
+:root {
+  /* Colours */
+  --paper: #ffffff;
+  --ink: #000000;
+  --magenta: #ff00ff;       /* ZX Spectrum: INK 3, BRIGHT 1 */
+
+  /* Typefaces. Each list is tried in order; the first one the device
+     has is used. Courier New and Noteworthy are built into every Mac
+     and iPhone; the others are the closest matches on Windows,
+     Android and Linux. */
+  --type: "Courier New", Courier, "Liberation Mono", serif-monospace, monospace;
+  --hand: Noteworthy, "Ink Free", "Segoe Print", casual, cursive;
+
+  /* The layout is measured the way the Keynote sketch was drawn.
+     One unit (--u) is 1% of the window width, so a number like 3.33
+     means "3.33% of the way across", wherever the page is viewed.
+     On a 1920-pixel screen, 1 unit is 19.2 pixels and the page
+     matches the sketch. Above 2000 pixels the units stop growing
+     and the page sits in the middle of the window. */
+  --u: min(1vw, 1.25rem);
+
+  /* The right-hand column: the menu, the line under it and the picture
+     all share this width, so their left and right edges line up.
+     37.14% of the window, as in the sketch, but never narrower than
+     33rem, the room the menu needs at its smallest text size. */
+  --right: max(calc(37.14 * var(--u)), 33rem);
+
+  color-scheme: light;
+}
+
+/* Visitors who have set their device to dark mode get light text on a
+   dark page, and a light-on-dark version of the logo (see index.html). */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1b1b;
+    --ink: #f0f0f0;
+    color-scheme: dark;
+  }
+}
+
+
+/* ---------- The page ---------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--type);
+  /* 20px on a 1920-pixel screen, never smaller than 16px. */
+  font-size: max(1rem, calc(1.05 * var(--u)));
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--magenta);
+}
+
+/* A clear outline for anyone moving around with the keyboard. */
+a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Hidden until someone presses Tab, then it appears top left. */
+.skip-link {
+  position: absolute;
+  left: -100vw;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 0.5rem;
+  background: var(--paper);
+}
+
+/* The header and the main content share the same edges.
+   As in the sketch, the right margin is wider than the left. */
+.masthead,
+main {
+  max-width: calc(100 * var(--u));
+  margin-inline: auto;
+  padding-left: calc(3.33 * var(--u));
+  padding-right: calc(10.73 * var(--u));
+}
+
+
+/* ---------- Header: name, menu and logo ---------- */
+
+.masthead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 2rem;
+  align-items: start;
+  padding-top: calc(5.4 * var(--u));
+}
+
+.name {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* The menu sits at the right, exactly as wide as the picture below.
+   Its first link starts at the picture's left edge and its last link
+   ends at the picture's right edge. */
+.masthead nav {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  width: var(--right);
+}
+
+/* The line under the menu is a hairline: half a pixel draws the
+   thinnest line a high-resolution screen can show, and browsers
+   round it up to one pixel on ordinary screens. */
+.masthead ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1em;
+  row-gap: 0.4em;
+  margin: 0;
+  padding: 0 0 0.9em;
+  list-style: none;
+  border-bottom: 0.5px solid var(--ink);
+}
+
+.logo {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: max(1rem, calc(2.1 * var(--u)));
+}
+
+.logo img {
+  width: auto;
+  height: max(3rem, calc(3.15 * var(--u)));
+}
+
+
+/* ---------- Headline ---------- */
+
+h1 {
+  margin: max(3rem, calc(6.9 * var(--u))) 0 0;
+  font-size: max(1.75rem, calc(2.6 * var(--u)));
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+
+/* ---------- The picture and its caption ----------
+   The picture is the same width as the menu and sits under it,
+   against the right margin. The caption sits to its left, at the
+   bottom, so it leads the eye into the picture. */
+
+main {
+  padding-bottom: max(3rem, calc(5.8 * var(--u)));
+}
+
+.future {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  column-gap: calc(2.97 * var(--u));
+  margin: max(3rem, calc(6.8 * var(--u))) 0 0;
+}
+
+.future img {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+}
+
+.future figcaption {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: end;
+  padding-bottom: 0.5em;
+  font-family: var(--hand);
+  font-size: max(1.125rem, calc(1.2 * var(--u)));
+  line-height: 1.2;
+  text-align: right;
+  color: var(--magenta);
+}
+
+
+/* ---------- Narrower windows ---------- */
+
+/* Below about 880px there's no room for the caption beside the
+   picture, so it goes above it. The picture stays under the menu,
+   the same width. */
+@media (max-width: 55rem) {
+  .future {
+    grid-template-columns: var(--right);
+    justify-content: end;
+  }
+
+  .future figcaption {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .future img {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* Below about 770px, your name and the menu no longer fit side by
+   side. The menu drops to the next line, and the menu, line and
+   picture all run the full width. */
+@media (max-width: 48rem) {
+  :root {
+    --right: 100%;
+  }
+
+  .masthead nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 0.75rem;
+  }
+
+  .logo {
+    grid-row: 3;
+  }
+}
+
+/* On phones, equal margins on both sides. */
+@media (max-width: 40rem) {
+  .masthead,
+  main {
+    padding-inline: 1.25rem;
+  }
+}
