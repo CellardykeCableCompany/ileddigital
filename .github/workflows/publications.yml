@@ -1,0 +1,38 @@
+# Updates publications.html from Jon's Pure records once a week.
+# It can also be run by hand: Actions tab > Update publications > Run workflow.
+
+name: Update publications
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"     # every Monday at 06:17 (UTC)
+  workflow_dispatch:          # adds the "Run workflow" button
+
+permissions:
+  contents: write             # to save the updated page
+  pages: write                # to ask GitHub Pages to republish
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the site
+        uses: actions/checkout@v5
+
+      - name: Rebuild the list from Pure
+        run: python3 tools/update_publications.py
+
+      - name: Save and republish, only if something changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet publications.html; then
+            echo "No changes this week."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publications.html
+          git commit -m "Update publications from Pure"
+          git push
+          gh api --method POST "repos/${{ github.repository }}/pages/builds" || echo "Republish request skipped"
