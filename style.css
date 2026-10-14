@@ -116,12 +116,14 @@ main {
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: 2rem;
   align-items: start;
-  padding-top: calc(5.4 * var(--u));
+  padding-top: max(0.75rem, calc(0.85 * var(--u)));
 }
 
+/* The logo sits at the very top. Your name and the menu sit on the
+   row below it, side by side. */
 .name {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
 }
 
 /* The menu sits at the right, exactly as wide as the picture below.
@@ -129,7 +131,7 @@ main {
    ends at the picture's right edge. */
 .masthead nav {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
   justify-self: end;
   width: var(--right);
 }
@@ -144,7 +146,7 @@ main {
   column-gap: 1em;
   row-gap: 0.4em;
   margin: 0;
-  padding: 0 0 0.9em;
+  padding: 0 0 0.7em;
   list-style: none;
   border-bottom: 0.5px solid var(--ink);
 }
@@ -157,8 +159,8 @@ main {
 
 .logo {
   grid-column: 1;
-  grid-row: 2;
-  margin-top: max(1rem, calc(2.1 * var(--u)));
+  grid-row: 1;
+  margin-bottom: max(1rem, calc(1.45 * var(--u)));
 }
 
 .logo img {
@@ -167,13 +169,46 @@ main {
 }
 
 
-/* ---------- Headline ---------- */
+/* ---------- Headline and content ----------
+   The headline sits in the left-hand column, just under the menu line.
+   Whatever comes first after it (the picture, the project grid, the
+   text) shares the same row, in the right-hand column, starting a
+   little lower. Everything after that follows underneath. */
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+/* Everything in main shares one full-width column; the headline and
+   the first block overlap in its first row. */
+main > * {
+  grid-column: 1;
+}
 
 h1 {
-  margin: max(3rem, calc(6.9 * var(--u))) 0 0;
+  margin: max(1rem, calc(1.1 * var(--u))) 0 0;
   font-size: max(1.75rem, calc(2.6 * var(--u)));
   font-weight: normal;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+main > h1 {
+  grid-row: 1;
+  max-width: calc(100% - var(--right) - var(--gutter));
+  position: relative;
+}
+
+main > h1 + :is(.future, .projects, .lead, .ledger) {
+  grid-row: 1;
+  margin-top: max(2rem, calc(3.65 * var(--u)));
+}
+
+/* A second line of headline that always starts on its own line,
+   as in "through making" on the projects page. */
+h1 .line {
+  display: block;
 }
 
 
@@ -204,7 +239,7 @@ main {
   grid-row: 1;
   align-self: end;
   justify-self: end;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.15em;
   font-family: var(--hand);
   font-size: max(1.125rem, calc(1.2 * var(--u)));
   line-height: 1.2;
@@ -220,7 +255,7 @@ main {
 
 
 /* ---------- Projects grid ----------
-   Square pictures with names, three across, in the right-hand column
+   Landscape pictures with names, three across, in the right-hand column
    under the menu. On phones it drops to two across. */
 
 .projects {
@@ -246,7 +281,7 @@ main {
 
 .projects img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
@@ -368,6 +403,23 @@ main {
 
 /* ---------- Narrower windows ---------- */
 
+/* Below about 1024px the left-hand column gets too narrow for the
+   headline, so it goes back above the content, full width. */
+@media (max-width: 64rem) {
+  main > h1,
+  main > h1 + :is(.future, .projects, .lead, .ledger) {
+    grid-row: auto;
+  }
+
+  main > h1 {
+    max-width: none;
+  }
+
+  main > h1 + :is(.future, .projects, .lead, .ledger) {
+    margin-top: 2rem;
+  }
+}
+
 /* Below about 880px there's no room for the caption beside the
    picture, so it goes above it. The picture stays under the menu,
    the same width. */
@@ -428,12 +480,8 @@ main {
 
   .masthead nav {
     grid-column: 1 / -1;
-    grid-row: 2;
-    margin-top: 0.75rem;
-  }
-
-  .logo {
     grid-row: 3;
+    margin-top: 0.75rem;
   }
 }
 
