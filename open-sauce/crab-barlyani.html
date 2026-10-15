@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crab Barlyani</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+      </div>
+      <!--
+      Jon's recipe, word for word from "Adventures in time and spice".
+      Line breaks are kept as he wrote them. The image alt text is a
+      draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>Crab Barlyani</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,44 +48,31 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      Jon's recipe, word for word from "Adventures in time and spice".
-      Line breaks are kept as he wrote them. The image alt text is a
-      draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>Crab Barlyani</h1>
-
-    <div class="lead recipe">
-      <p>1 cup Baked barley soaked 6 hours</p>
-      <p>Fry in rapeseed oil<br>
-        1 onion<br>
-        2 garlic<br>
-        1 tspn mustard seeds<br>
-        1 bay<br>
-        2 green chilli<br>
-        1cm ginger</p>
-      <p>2 mins</p>
-      <p>Add<br>
-        1 chopped good tomato (large)<br>
-        2tspn coriander<br>
-        1 tspn fish masala<br>
-        1/2 tspn turmeric<br>
-        1 tspn salt</p>
-      <p>Add 2.5 cup water</p>
-      <p>Bring to pressure.</p>
-      <p>Hold for 30 min</p>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead recipe">
+        <p>1 cup Baked barley soaked 6 hours</p>
+        <p>Fry in rapeseed oil<br>
+          1 onion<br>
+          2 garlic<br>
+          1 tspn mustard seeds<br>
+          1 bay<br>
+          2 green chilli<br>
+          1cm ginger</p>
+        <p>2 mins</p>
+        <p>Add<br>
+          1 chopped good tomato (large)<br>
+          2tspn coriander<br>
+          1 tspn fish masala<br>
+          1/2 tspn turmeric<br>
+          1 tspn salt</p>
+        <p>Add 2.5 cup water</p>
+        <p>Bring to pressure.</p>
+        <p>Hold for 30 min</p>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>

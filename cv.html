@@ -5,19 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Curriculum Vitae Professor Jon Rogers</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current="page" marks
-       the page you're on, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="index.html">jon rogers</a>
-    <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="index.html">jon rogers</a>
+        <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+      </div>
+      <!--
+      The text on this page is Jon's CV, word for word.
+      
+      Each section is a <section class="ledger">. Its heading and text sit
+      in the right-hand column, under the menu. Dates hang in the left-hand
+      column, against the gap, so the eye can run down them.
+      
+      A dated entry:   <li><span class="when">2020</span><span class="what">...</span></li>
+      A paragraph:     <div class="prose"><p>...</p></div>
+      
+      Selected Publications are on publications.html.
+      -->
+      
+      <h1>Curriculum Vitae Professor Jon Rogers</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="projects.html">things</a></li>
         <li><a href="cv.html" aria-current="page">cv</a></li>
@@ -28,173 +55,153 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      The text on this page is Jon's CV, word for word.
-
-      Each section is a <section class="ledger">. Its heading and text sit
-      in the right-hand column, under the menu. Dates hang in the left-hand
-      column, against the gap, so the eye can run down them.
-
-      A dated entry:   <li><span class="when">2020</span><span class="what">...</span></li>
-      A paragraph:     <div class="prose"><p>...</p></div>
-
-      Selected Publications are on publications.html.
-    -->
-
-    <h1>Curriculum Vitae Professor Jon Rogers</h1>
-
-    <div class="lead">
-      <p>I am professor of design at Northumbria University in Newcastle. I take a very hands-in approach to understanding human relationships with digital technologies by making things that help to uncover as yet untold stories of how our relationship with the internet and related technologies might unfold. Following a three year Senior Fellowship with Mozilla in Berlin (2016-2019) I led the Horizon 2020 Marie Skłodowska-Curie doctoral training programme OpenDoTT exploring trust and the internet of things. I have a long history of organising and delivering workshops that engage professionals, academics and the public with emerging technologies at Mozilla Festival, re:publica, Unbox Festival, London Design Festival, ThingsCon, ACM CHI and TEI.</p>
-      <ul class="elsewhere">
-        <li><a href="https://orcid.org/0000-0002-9735-3675">https://orcid.org/0000-0002-9735-3675</a></li>
-        <li><a href="https://www.northumbria.ac.uk/about-us/our-staff/r/jon-rogers/">https://www.northumbria.ac.uk/about-us/our-staff/r/jon-rogers/</a></li>
-      </ul>
-    </div>
-
-    <section class="ledger" aria-labelledby="employment">
-      <h2 id="employment">Employment</h2>
-      <ol>
-        <li><span class="when">2020 -</span><span class="what">Professor of Design, Northumbria University (current post)</span></li>
-        <li><span class="when">2016-2019</span><span class="what">Senior Research Fellow Mozilla Foundation.</span></li>
-        <li><span class="when">2014-2016</span><span class="what">Non-Executive Director, Uniform.</span></li>
-        <li><span class="when">2013-2020</span><span class="what">Professor of Creative Technology, University of Dundee.</span></li>
-        <li><span class="when">2010-2013</span><span class="what">Senior Lecturer, Product Design, University of Dundee.</span></li>
-        <li><span class="when">2009-2024</span><span class="what">Visiting professor, National Institute of Design, India</span></li>
-        <li><span class="when">2003-2010</span><span class="what">Lecturer, Product Design, University of Dundee.</span></li>
-        <li><span class="when">2003-2008</span><span class="what">Visiting tutor, Interaction Design, Royal College of Art.</span></li>
-        <li><span class="when">2001-2002</span><span class="what">Visiting tutor, Urban Research Laboratory, KTH, Stockholm.</span></li>
-        <li><span class="when">1998-2003</span><span class="what">Tutor, Interaction Design, Royal College of Art.</span></li>
-        <li><span class="when">1994-1995</span><span class="what">Graduate Assistant to Stephen Hawking, University of Cambridge.</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="education">
-      <h2 id="education">Graduate education</h2>
-      <ol>
-        <li><span class="when">2001</span><span class="what">PhD Electrical and Electronic Engineering Imperial College<br>Thesis title - A Digital Neural Network Model of Motion Perception.</span></li>
-        <li><span class="when">1994</span><span class="what">BEng. (Honours), class 2:1. Dip. Eng. in VLSI design. Electrical and Electronic Engineering, University of Hull.</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="funding">
-      <h2 id="funding">Research Funding</h2>
-      <ol>
-        <li><span class="when">2021-2025</span><span class="what"><a href="https://digitalcitizens.uk/">Centre for Digital Citizens</a></span></li>
-        <li><span class="when">2021</span><span class="what"><a href="https://hicraftnorthumbria.org/">Crafting a Healthier Internet: People, Things and our Digital Society</a> AHRC responsive mode funding AH/V005189/1 (£703,417). Justin Marshall PI with Jayne Wallace, Jon Rogers, Nick Taylor. Ends December 2024.</span></li>
-        <li><span class="when">2020</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/">VA-People, Experiences, Practices and Routines (VA-PEPR)</a>, with Luzern University of Applied Sciences, 2,233,073 CHF (£1.7M), Sabine Junginger (HSLU PI), with Rogers CI (value to Northumbria £144K). Completed March 2024.</span></li>
-        <li><span class="when">2020</span><span class="what"><a href="https://petras.cs.ucl.ac.uk/project/the-reappearing-computer-foregrounding-privacy-in-iot-reappear/">The Reappearing Computer: Foregrounding Privacy in IoT (REAPPEAR)</a>, Nick Taylor PI, Jon Rogers Co-I and Jayne Wallace Co-I Jul 2020, 18 Months £199K EPSRC via PETRAS Strategic Research Fund. Completed August 2023</span></li>
-        <li><span class="when">2019</span><span class="what"><a href="https://opendott.org/">OpenDoTT (Open Design of Trusted Things)</a> €1.5M. PI H2020 MSCA-ITN-EID, PI, with Nick Taylor. Completed December 2022.</span></li>
-        <li><span class="when">2016</span><span class="what"><a href="https://blog.mozilla.org/en/internet-culture/interviews/jon-rogers-internet-things/">Mozilla Foundation Research Award Senior Fellowship</a>, $488K PI completed 2019</span></li>
-        <li><span class="when">2015</span><span class="what"><a href="https://www.dundee.ac.uk/projects/design-action">AHRC Commission New Business Models</a>, £57K, Co-I with Georgina Follet.</span></li>
-        <li><span class="when">2014</span><span class="what"><a href="https://designinformatics.org/portfolio-item/connected-high-street/">Connected High Street</a>, EPSRC, £405K, Co-I with Jayne Wallace (Co-I), Chris Speed (PI - ECA) Completed 2016</span></li>
-        <li><span class="when">2013</span><span class="what"><a href="https://discovery.dundee.ac.uk/en/publications/unlimited-theatre-digital-playscripts/">Make Some More Noise: A Digital Adventure In Storytelling</a>, Nesta/AHRC/ACE digital R&amp;D £105K PI with Unlimited Theatre, Completed 2014.</span></li>
-        <li><span class="when">2011</span><span class="what"><a href="https://discovery.dundee.ac.uk/en/publications/between-worlds-report-for-nesta-on-mitpunchdrunk-theatre-emsleep-/">Liminal Ethnography and Insight Journalism</a>, £38K, Nesta/AHRC/ACE digital R&amp;D Co-I with Dan Dixon (PI - UAE) partners MIT Media Labs and Punchdrunk Theatre. Completed 2012.</span></li>
-        <li><span class="when">2011</span><span class="what"><a href="https://www.lancashire.ac.uk/research/institutes/iccc/media-innovation-studio/interactive-newsprint">Interactive Newsprint</a>, EPSRC Research In the Wild award, £372K, Co-I with Paul Egglestone (PI UCLAN) and David Frohlich (Co-I Surrey). Completed 2013.</span></li>
-        <li><span class="when">2010</span><span class="what">Participants United, AHRC Connected Communities Award, £36K, Co-I with Paul Egglestone (PI), Ann Light (Co-I Northumbria) and Tom Wakeford (Co-I)</span></li>
-        <li><span class="when">2010</span><span class="what">Are We Nearly There Yet? Microsoft Research Doctoral Award, £90K, PI, completed 2013</span></li>
-        <li><span class="when">2009</span><span class="what"><a href="https://www.research.ed.ac.uk/en/projects/totem-tales-of-things-electonic-memory/">TOTeM: Tales of Things, Electronic Memory</a>, EPSRC Digital Economy, £1.19M, Co-I, with Chris Speed (PI - ECA), Andy Hudson-Smith (Co-I UCL), Maria Burke (Co-I Salford), Angelina Karpovich (Co)-I Brunel) Completed 2012.</span></li>
-        <li><span class="when">2009</span><span class="what"><a href="https://www.surrey.ac.uk/digital-world-research-centre/funded-projects/bespoke">Bespoke</a>, EPSRC Digital Economy, £895K, Co-I with David Frohlich (PI - Surrey), Justin Marshall (Co-I Falmouth) Patrick Olivier (Co-I Newcastle) and Paul Egglestone (co-I UCLAN). Completed 2011.</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="talks">
-      <h2 id="talks">Recent talks, events and exhibitions</h2>
-      <ol>
-        <li><span class="when">2026</span><span class="what"><a href="https://research-portal.st-andrews.ac.uk/en/publications/finding-our-common-ground-potential-resistance-and-power-in-creat/">Finding our common ground: potential, resistance and power in creative technology</a>. DRS, Edinburgh.</span></li>
-        <li><span class="when">2026</span><span class="what"><a href="https://www.hcid.city/news/rooting-for-change-with-sebastian-prost">Rooting for Change: Exploring Regenerative Digital Technologies</a>. Chalmers University of Technology.</span></li>
-        <li><span class="when">2025</span><span class="what">Can Anstruther Be The World’s First Digital Safe Haven, Dreel Halls Anstruther. November.</span></li>
-        <li><span class="when">2024</span><span class="what"><a href="https://www.vam.ac.uk/event/Rv3OznJDWX/ddw-saturday-talk-sept-2024">Crafting A Healthier Internet</a> (with Vladan Joler and Ame Elliott) V&amp;A Digital Design Weekend.</span></li>
-        <li><span class="when">2024</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/register-for-talking-ai-event/">Provotypes to Speculate About Futures</a>, Talking AI, HSLU Luzern.</span></li>
-        <li><span class="when">2023</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/victoria-and-albert-museum-features-va-pepr-project/">Voice Matters</a>, V&amp;A Digital Design Weekend, London</span></li>
-        <li><span class="when">2023</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/va-peprs-interactive-installation-money-talks-showcased-at-republica-23-in-berlin/">Voice Matters</a>, Re:Publica, Berlin</span></li>
-        <li><span class="when">2022</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/speak-up-exploring-decentralised-voice-assistant-futures-through-speculative-design/">Speak up!</a>, Re:Publica, Berlin</span></li>
-        <li><span class="when">2022</span><span class="what">Do you dig voice assistants? Eyemyth Festival, online</span></li>
-        <li><span class="when">2022</span><span class="what">Introduction to Speculative Design Hochschule Luzern, Switzerland</span></li>
-        <li><span class="when">2021</span><span class="what">Voice Assistants, Critical, commons and creative approaches, with Michelle Thorne Mozilla, University of Southern Denmark (27.04.2021)</span></li>
-        <li><span class="when">2021</span><span class="what">Voice Assistants for use in resource management, University of Applied Sciences Luzern</span></li>
-        <li><span class="when">2020</span><span class="what">Reimagining your bodies as data, Service Design Days, with Babitha George and Romit Raj.</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="advisory">
-      <h2 id="advisory">Advisory roles</h2>
-      <ol>
-        <li><span class="when">2024 -2025</span><span class="what">Expert Panel Member WHO working group in AI-design-policy in health</span></li>
-        <li><span class="when">2022 - present</span><span class="what">Mentor for <a href="https://superbloom.design/about/people/jon-rogers/">Superbloom</a> and the <a href="https://prototypefund.de/en/">German Prototype Fund</a> / Mozilla Foundation staff</span></li>
-        <li><span class="when">2021 - 2024</span><span class="what">Board Member <a href="https://www.ikigaidata.com/">Ikigai Data</a> (an ed-tech startup exploring student careers)</span></li>
-        <li><span class="when">2018</span><span class="what">Co-founder magazine Ding! <a href="https://dingdingding.org">dingdingding.org</a></span></li>
-        <li><span class="when">2018</span><span class="what"><a href="https://blog.mozilla.org/blogarchive/blog/2018/09/25/1-6-million-to-connect-unconnected-americans-our-nsf-wins-competition-grand-prize-winners/">Wireless Innovation for a Networked Society Challenges</a> (Mozilla &amp; NSF)</span></li>
-        <li><span class="when">2014</span><span class="what">Penguin Books and Stephen Fry, <a href="https://www.youtube.com/watch?v=jCBoKblmhds">YourFry Global Challenge</a>.</span></li>
-        <li><span class="when">2014-2019</span><span class="what">Advisory board, <a href="http://unboxfestival.com/">Unbox Festival</a>, India.</span></li>
-        <li><span class="when">2013-2015</span><span class="what"><a href="https://unlimited.earth/project/unlimited-space-agency/">Unlimited Space Agency</a>, Head of Hack, for theatre group Untheatre</span></li>
-        <li><span class="when">2013 - 2018</span><span class="what">Advisor and judge for London Design Museum’s <a href="https://designmuseum.org/exhibitions/beazley-designs-of-the-year">Designs of The Year</a>.</span></li>
-        <li><span class="when">2012 - 2015</span><span class="what"><a href="https://2013.spaceappschallenge.org/people">NASA Space Apps Challenge</a> global lead.</span></li>
-        <li><span class="when">2012</span><span class="what">Curator <a href="https://blog.mozilla.org/en/mozilla/mozfest-2012/">Physical Web</a>, Mozilla Festival</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="review">
-      <h2 id="review">Review roles</h2>
-      <ol>
-        <li><span class="when">2026</span><span class="what">Doctorate Committee, Eindhoven Technical University</span></li>
-        <li><span class="when">2022</span><span class="what">Reviewer Sloan Foundation, USA</span></li>
-        <li><span class="when">2021 - present</span><span class="what">External examiner Product Design BA, Edinburgh University</span></li>
-        <li><span class="when">2020 - present</span><span class="what">Future Leaders Fellowship review UKRI</span></li>
-        <li><span class="when">2020</span><span class="what">PhD examiner Lancaster University</span></li>
-        <li><span class="when">2019 - present</span><span class="what">External examiner National College of Art and Design, Dublin</span></li>
-        <li><span class="when">2018</span><span class="what">PhD examiner Goldsmiths</span></li>
-        <li><span class="when">2018 - present</span><span class="what">UKRI reviewer (various AHRC/EPSRC proposals)</span></li>
-        <li><span class="when">2018-2021</span><span class="what">Carnegie Trust Research Assessor</span></li>
-        <li><span class="when">2015</span><span class="what">Documentation Chair, Research Through Design</span></li>
-        <li><span class="when">2015</span><span class="what">Phd External Examiner, Lancaster University</span></li>
-        <li><span class="when">2014 - 2018</span><span class="what">AHRC Peer Review College.</span></li>
-        <li><span class="when">2014</span><span class="what">University of Plymouth, Periodic Review Committee</span></li>
-        <li><span class="when">2013 - 2018</span><span class="what">External Examiner PDE Glasgow (MSc, MEng, BEng).</span></li>
-        <li><span class="when">2013 - 2018</span><span class="what">External Examiner MA Interaction Design Goldsmiths.</span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="awards">
-      <h2 id="awards">Awards and notable career events</h2>
-      <ol>
-        <li><span class="when">2020</span><span class="what">Our Friends Electric, the short films we made with Superflux, acquired by the European Patent Office for their art collection. <a href="https://www.epo.org/en/about-us/social-responsibility/art/collection">https://www.epo.org/en/about-us/social-responsibility/art/collection</a></span></li>
-        <li><span class="when">2017</span><span class="what">Rockefeller Bellagio award to host a leadership summit on the Voice Enabled Internet</span></li>
-        <li><span class="when">2015</span><span class="what">YourFry collaboration with Penguin Books wins Stephen Fry award for Innovation</span></li>
-        <li><span class="when">2013</span><span class="what">Collaboration with OpenNASA for Space Apps Challenge <a href="https://www.opennasa.org/turning-space-data-into-physical-apps.html">https://www.opennasa.org/turning-space-data-into-physical-apps.html</a></span></li>
-      </ol>
-    </section>
-
-    <section class="ledger" aria-labelledby="phd">
-      <h2 id="phd">PhD students</h2>
-      <div class="prose">
-        <p>PhD students (1st Supervisor) Romit Raj (Mark Blythe 2nd) current (started 2023), Michael Shorter (Jayne Wallace 2nd) awarded 2017, Larissa Pschetz (Chris Speed 2nd) awarded 2015, Steven Birnie (Graham Pullen 2nd) awarded 2014.</p>
-        <p>PhD students (2nd Supervisor) Babitha George (Jayne Wallace 1st, Jon Rogers 2nd, Bill Gaver 3rd) current (started 2022), Dylan Gauld (Chris Rowland 1st) awarded 2020, Katerina Gorkovenko (Nick Taylor 1st) awarded 2018, Nicholas O’Donnell-Hoare (Sandra Wilson 1st) awarded 2018.</p>
+    <main id="main">
+  
+      <div class="lead">
+        <p>I am professor of design at Northumbria University in Newcastle. I take a very hands-in approach to understanding human relationships with digital technologies by making things that help to uncover as yet untold stories of how our relationship with the internet and related technologies might unfold. Following a three year Senior Fellowship with Mozilla in Berlin (2016-2019) I led the Horizon 2020 Marie Skłodowska-Curie doctoral training programme OpenDoTT exploring trust and the internet of things. I have a long history of organising and delivering workshops that engage professionals, academics and the public with emerging technologies at Mozilla Festival, re:publica, Unbox Festival, London Design Festival, ThingsCon, ACM CHI and TEI.</p>
+        <ul class="elsewhere">
+          <li><a href="https://orcid.org/0000-0002-9735-3675">https://orcid.org/0000-0002-9735-3675</a></li>
+          <li><a href="https://www.northumbria.ac.uk/about-us/our-staff/r/jon-rogers/">https://www.northumbria.ac.uk/about-us/our-staff/r/jon-rogers/</a></li>
+        </ul>
       </div>
-    </section>
-
-    <section class="ledger" aria-labelledby="management">
-      <h2 id="management">Line management and mentoring</h2>
-      <div class="prose">
-        <p>I have over 15 years of line managing and mentoring experience of early and mid-career researchers. I currently manage eight members of staff (including two research fellows, Dr Mike Shorter and Dr Dave Chatting) and mentor another eight. Previous ECR line management and support includes the five OpenDoTT ECRs, four Mozilla fellows and three research fellows. In addition I lead the Creative Technology Working group of ten people. I am committed to staff training and regularly run events and workshops to support learning in the school.</p>
-      </div>
-    </section>
-
-    <section class="ledger" aria-labelledby="skills">
-      <h2 id="skills">Creative Technology skills</h2>
-      <div class="prose">
-        <p>I am skilled in both the Arduino Microcontroller and Raspberry Pi open hardware ecosystems using LoRa, TinyML and various networking standards (MQTT, ESP-NOW, UDP). Programming languages include C++, Java and Python. 3D printing (Prusa). CAD (Fusion 360, Shapr3D).</p>
-      </div>
-    </section>
-
-  </main>
+  
+      <section class="ledger" aria-labelledby="employment">
+        <h2 id="employment">Employment</h2>
+        <ol>
+          <li><span class="when">2020 -</span><span class="what">Professor of Design, Northumbria University (current post)</span></li>
+          <li><span class="when">2016-2019</span><span class="what">Senior Research Fellow Mozilla Foundation.</span></li>
+          <li><span class="when">2014-2016</span><span class="what">Non-Executive Director, Uniform.</span></li>
+          <li><span class="when">2013-2020</span><span class="what">Professor of Creative Technology, University of Dundee.</span></li>
+          <li><span class="when">2010-2013</span><span class="what">Senior Lecturer, Product Design, University of Dundee.</span></li>
+          <li><span class="when">2009-2024</span><span class="what">Visiting professor, National Institute of Design, India</span></li>
+          <li><span class="when">2003-2010</span><span class="what">Lecturer, Product Design, University of Dundee.</span></li>
+          <li><span class="when">2003-2008</span><span class="what">Visiting tutor, Interaction Design, Royal College of Art.</span></li>
+          <li><span class="when">2001-2002</span><span class="what">Visiting tutor, Urban Research Laboratory, KTH, Stockholm.</span></li>
+          <li><span class="when">1998-2003</span><span class="what">Tutor, Interaction Design, Royal College of Art.</span></li>
+          <li><span class="when">1994-1995</span><span class="what">Graduate Assistant to Stephen Hawking, University of Cambridge.</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="education">
+        <h2 id="education">Graduate education</h2>
+        <ol>
+          <li><span class="when">2001</span><span class="what">PhD Electrical and Electronic Engineering Imperial College<br>Thesis title - A Digital Neural Network Model of Motion Perception.</span></li>
+          <li><span class="when">1994</span><span class="what">BEng. (Honours), class 2:1. Dip. Eng. in VLSI design. Electrical and Electronic Engineering, University of Hull.</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="funding">
+        <h2 id="funding">Research Funding</h2>
+        <ol>
+          <li><span class="when">2021-2025</span><span class="what"><a href="https://digitalcitizens.uk/">Centre for Digital Citizens</a></span></li>
+          <li><span class="when">2021</span><span class="what"><a href="https://hicraftnorthumbria.org/">Crafting a Healthier Internet: People, Things and our Digital Society</a> AHRC responsive mode funding AH/V005189/1 (£703,417). Justin Marshall PI with Jayne Wallace, Jon Rogers, Nick Taylor. Ends December 2024.</span></li>
+          <li><span class="when">2020</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/">VA-People, Experiences, Practices and Routines (VA-PEPR)</a>, with Luzern University of Applied Sciences, 2,233,073 CHF (£1.7M), Sabine Junginger (HSLU PI), with Rogers CI (value to Northumbria £144K). Completed March 2024.</span></li>
+          <li><span class="when">2020</span><span class="what"><a href="https://petras.cs.ucl.ac.uk/project/the-reappearing-computer-foregrounding-privacy-in-iot-reappear/">The Reappearing Computer: Foregrounding Privacy in IoT (REAPPEAR)</a>, Nick Taylor PI, Jon Rogers Co-I and Jayne Wallace Co-I Jul 2020, 18 Months £199K EPSRC via PETRAS Strategic Research Fund. Completed August 2023</span></li>
+          <li><span class="when">2019</span><span class="what"><a href="https://opendott.org/">OpenDoTT (Open Design of Trusted Things)</a> €1.5M. PI H2020 MSCA-ITN-EID, PI, with Nick Taylor. Completed December 2022.</span></li>
+          <li><span class="when">2016</span><span class="what"><a href="https://blog.mozilla.org/en/internet-culture/interviews/jon-rogers-internet-things/">Mozilla Foundation Research Award Senior Fellowship</a>, $488K PI completed 2019</span></li>
+          <li><span class="when">2015</span><span class="what"><a href="https://www.dundee.ac.uk/projects/design-action">AHRC Commission New Business Models</a>, £57K, Co-I with Georgina Follet.</span></li>
+          <li><span class="when">2014</span><span class="what"><a href="https://designinformatics.org/portfolio-item/connected-high-street/">Connected High Street</a>, EPSRC, £405K, Co-I with Jayne Wallace (Co-I), Chris Speed (PI - ECA) Completed 2016</span></li>
+          <li><span class="when">2013</span><span class="what"><a href="https://discovery.dundee.ac.uk/en/publications/unlimited-theatre-digital-playscripts/">Make Some More Noise: A Digital Adventure In Storytelling</a>, Nesta/AHRC/ACE digital R&amp;D £105K PI with Unlimited Theatre, Completed 2014.</span></li>
+          <li><span class="when">2011</span><span class="what"><a href="https://discovery.dundee.ac.uk/en/publications/between-worlds-report-for-nesta-on-mitpunchdrunk-theatre-emsleep-/">Liminal Ethnography and Insight Journalism</a>, £38K, Nesta/AHRC/ACE digital R&amp;D Co-I with Dan Dixon (PI - UAE) partners MIT Media Labs and Punchdrunk Theatre. Completed 2012.</span></li>
+          <li><span class="when">2011</span><span class="what"><a href="https://www.lancashire.ac.uk/research/institutes/iccc/media-innovation-studio/interactive-newsprint">Interactive Newsprint</a>, EPSRC Research In the Wild award, £372K, Co-I with Paul Egglestone (PI UCLAN) and David Frohlich (Co-I Surrey). Completed 2013.</span></li>
+          <li><span class="when">2010</span><span class="what">Participants United, AHRC Connected Communities Award, £36K, Co-I with Paul Egglestone (PI), Ann Light (Co-I Northumbria) and Tom Wakeford (Co-I)</span></li>
+          <li><span class="when">2010</span><span class="what">Are We Nearly There Yet? Microsoft Research Doctoral Award, £90K, PI, completed 2013</span></li>
+          <li><span class="when">2009</span><span class="what"><a href="https://www.research.ed.ac.uk/en/projects/totem-tales-of-things-electonic-memory/">TOTeM: Tales of Things, Electronic Memory</a>, EPSRC Digital Economy, £1.19M, Co-I, with Chris Speed (PI - ECA), Andy Hudson-Smith (Co-I UCL), Maria Burke (Co-I Salford), Angelina Karpovich (Co)-I Brunel) Completed 2012.</span></li>
+          <li><span class="when">2009</span><span class="what"><a href="https://www.surrey.ac.uk/digital-world-research-centre/funded-projects/bespoke">Bespoke</a>, EPSRC Digital Economy, £895K, Co-I with David Frohlich (PI - Surrey), Justin Marshall (Co-I Falmouth) Patrick Olivier (Co-I Newcastle) and Paul Egglestone (co-I UCLAN). Completed 2011.</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="talks">
+        <h2 id="talks">Recent talks, events and exhibitions</h2>
+        <ol>
+          <li><span class="when">2026</span><span class="what"><a href="https://research-portal.st-andrews.ac.uk/en/publications/finding-our-common-ground-potential-resistance-and-power-in-creat/">Finding our common ground: potential, resistance and power in creative technology</a>. DRS, Edinburgh.</span></li>
+          <li><span class="when">2026</span><span class="what"><a href="https://www.hcid.city/news/rooting-for-change-with-sebastian-prost">Rooting for Change: Exploring Regenerative Digital Technologies</a>. Chalmers University of Technology.</span></li>
+          <li><span class="when">2025</span><span class="what">Can Anstruther Be The World’s First Digital Safe Haven, Dreel Halls Anstruther. November.</span></li>
+          <li><span class="when">2024</span><span class="what"><a href="https://www.vam.ac.uk/event/Rv3OznJDWX/ddw-saturday-talk-sept-2024">Crafting A Healthier Internet</a> (with Vladan Joler and Ame Elliott) V&amp;A Digital Design Weekend.</span></li>
+          <li><span class="when">2024</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/register-for-talking-ai-event/">Provotypes to Speculate About Futures</a>, Talking AI, HSLU Luzern.</span></li>
+          <li><span class="when">2023</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/victoria-and-albert-museum-features-va-pepr-project/">Voice Matters</a>, V&amp;A Digital Design Weekend, London</span></li>
+          <li><span class="when">2023</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/va-peprs-interactive-installation-money-talks-showcased-at-republica-23-in-berlin/">Voice Matters</a>, Re:Publica, Berlin</span></li>
+          <li><span class="when">2022</span><span class="what"><a href="https://sites.hslu.ch/va-pepr/en/publications/speak-up-exploring-decentralised-voice-assistant-futures-through-speculative-design/">Speak up!</a>, Re:Publica, Berlin</span></li>
+          <li><span class="when">2022</span><span class="what">Do you dig voice assistants? Eyemyth Festival, online</span></li>
+          <li><span class="when">2022</span><span class="what">Introduction to Speculative Design Hochschule Luzern, Switzerland</span></li>
+          <li><span class="when">2021</span><span class="what">Voice Assistants, Critical, commons and creative approaches, with Michelle Thorne Mozilla, University of Southern Denmark (27.04.2021)</span></li>
+          <li><span class="when">2021</span><span class="what">Voice Assistants for use in resource management, University of Applied Sciences Luzern</span></li>
+          <li><span class="when">2020</span><span class="what">Reimagining your bodies as data, Service Design Days, with Babitha George and Romit Raj.</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="advisory">
+        <h2 id="advisory">Advisory roles</h2>
+        <ol>
+          <li><span class="when">2024 -2025</span><span class="what">Expert Panel Member WHO working group in AI-design-policy in health</span></li>
+          <li><span class="when">2022 - present</span><span class="what">Mentor for <a href="https://superbloom.design/about/people/jon-rogers/">Superbloom</a> and the <a href="https://prototypefund.de/en/">German Prototype Fund</a> / Mozilla Foundation staff</span></li>
+          <li><span class="when">2021 - 2024</span><span class="what">Board Member <a href="https://www.ikigaidata.com/">Ikigai Data</a> (an ed-tech startup exploring student careers)</span></li>
+          <li><span class="when">2018</span><span class="what">Co-founder magazine Ding! <a href="https://dingdingding.org">dingdingding.org</a></span></li>
+          <li><span class="when">2018</span><span class="what"><a href="https://blog.mozilla.org/blogarchive/blog/2018/09/25/1-6-million-to-connect-unconnected-americans-our-nsf-wins-competition-grand-prize-winners/">Wireless Innovation for a Networked Society Challenges</a> (Mozilla &amp; NSF)</span></li>
+          <li><span class="when">2014</span><span class="what">Penguin Books and Stephen Fry, <a href="https://www.youtube.com/watch?v=jCBoKblmhds">YourFry Global Challenge</a>.</span></li>
+          <li><span class="when">2014-2019</span><span class="what">Advisory board, <a href="http://unboxfestival.com/">Unbox Festival</a>, India.</span></li>
+          <li><span class="when">2013-2015</span><span class="what"><a href="https://unlimited.earth/project/unlimited-space-agency/">Unlimited Space Agency</a>, Head of Hack, for theatre group Untheatre</span></li>
+          <li><span class="when">2013 - 2018</span><span class="what">Advisor and judge for London Design Museum’s <a href="https://designmuseum.org/exhibitions/beazley-designs-of-the-year">Designs of The Year</a>.</span></li>
+          <li><span class="when">2012 - 2015</span><span class="what"><a href="https://2013.spaceappschallenge.org/people">NASA Space Apps Challenge</a> global lead.</span></li>
+          <li><span class="when">2012</span><span class="what">Curator <a href="https://blog.mozilla.org/en/mozilla/mozfest-2012/">Physical Web</a>, Mozilla Festival</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="review">
+        <h2 id="review">Review roles</h2>
+        <ol>
+          <li><span class="when">2026</span><span class="what">Doctorate Committee, Eindhoven Technical University</span></li>
+          <li><span class="when">2022</span><span class="what">Reviewer Sloan Foundation, USA</span></li>
+          <li><span class="when">2021 - present</span><span class="what">External examiner Product Design BA, Edinburgh University</span></li>
+          <li><span class="when">2020 - present</span><span class="what">Future Leaders Fellowship review UKRI</span></li>
+          <li><span class="when">2020</span><span class="what">PhD examiner Lancaster University</span></li>
+          <li><span class="when">2019 - present</span><span class="what">External examiner National College of Art and Design, Dublin</span></li>
+          <li><span class="when">2018</span><span class="what">PhD examiner Goldsmiths</span></li>
+          <li><span class="when">2018 - present</span><span class="what">UKRI reviewer (various AHRC/EPSRC proposals)</span></li>
+          <li><span class="when">2018-2021</span><span class="what">Carnegie Trust Research Assessor</span></li>
+          <li><span class="when">2015</span><span class="what">Documentation Chair, Research Through Design</span></li>
+          <li><span class="when">2015</span><span class="what">Phd External Examiner, Lancaster University</span></li>
+          <li><span class="when">2014 - 2018</span><span class="what">AHRC Peer Review College.</span></li>
+          <li><span class="when">2014</span><span class="what">University of Plymouth, Periodic Review Committee</span></li>
+          <li><span class="when">2013 - 2018</span><span class="what">External Examiner PDE Glasgow (MSc, MEng, BEng).</span></li>
+          <li><span class="when">2013 - 2018</span><span class="what">External Examiner MA Interaction Design Goldsmiths.</span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="awards">
+        <h2 id="awards">Awards and notable career events</h2>
+        <ol>
+          <li><span class="when">2020</span><span class="what">Our Friends Electric, the short films we made with Superflux, acquired by the European Patent Office for their art collection. <a href="https://www.epo.org/en/about-us/social-responsibility/art/collection">https://www.epo.org/en/about-us/social-responsibility/art/collection</a></span></li>
+          <li><span class="when">2017</span><span class="what">Rockefeller Bellagio award to host a leadership summit on the Voice Enabled Internet</span></li>
+          <li><span class="when">2015</span><span class="what">YourFry collaboration with Penguin Books wins Stephen Fry award for Innovation</span></li>
+          <li><span class="when">2013</span><span class="what">Collaboration with OpenNASA for Space Apps Challenge <a href="https://www.opennasa.org/turning-space-data-into-physical-apps.html">https://www.opennasa.org/turning-space-data-into-physical-apps.html</a></span></li>
+        </ol>
+      </section>
+  
+      <section class="ledger" aria-labelledby="phd">
+        <h2 id="phd">PhD students</h2>
+        <div class="prose">
+          <p>PhD students (1st Supervisor) Romit Raj (Mark Blythe 2nd) current (started 2023), Michael Shorter (Jayne Wallace 2nd) awarded 2017, Larissa Pschetz (Chris Speed 2nd) awarded 2015, Steven Birnie (Graham Pullen 2nd) awarded 2014.</p>
+          <p>PhD students (2nd Supervisor) Babitha George (Jayne Wallace 1st, Jon Rogers 2nd, Bill Gaver 3rd) current (started 2022), Dylan Gauld (Chris Rowland 1st) awarded 2020, Katerina Gorkovenko (Nick Taylor 1st) awarded 2018, Nicholas O’Donnell-Hoare (Sandra Wilson 1st) awarded 2018.</p>
+        </div>
+      </section>
+  
+      <section class="ledger" aria-labelledby="management">
+        <h2 id="management">Line management and mentoring</h2>
+        <div class="prose">
+          <p>I have over 15 years of line managing and mentoring experience of early and mid-career researchers. I currently manage eight members of staff (including two research fellows, Dr Mike Shorter and Dr Dave Chatting) and mentor another eight. Previous ECR line management and support includes the five OpenDoTT ECRs, four Mozilla fellows and three research fellows. In addition I lead the Creative Technology Working group of ten people. I am committed to staff training and regularly run events and workshops to support learning in the school.</p>
+        </div>
+      </section>
+  
+      <section class="ledger" aria-labelledby="skills">
+        <h2 id="skills">Creative Technology skills</h2>
+        <div class="prose">
+          <p>I am skilled in both the Arduino Microcontroller and Raspberry Pi open hardware ecosystems using LoRa, TinyML and various networking standards (MQTT, ESP-NOW, UDP). Programming languages include C++, Java and Python. 3D printing (Prusa). CAD (Fusion 360, Shapr3D).</p>
+        </div>
+      </section>
+  
+    </main>
+  </div>
 
 </body>
 </html>

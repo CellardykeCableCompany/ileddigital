@@ -6,23 +6,34 @@
   <title>jon rogers</title>
   <!-- An empty icon stops the browser asking the server for favicon.ico. -->
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!--
-    The page is laid out on two columns, set in style.css:
-    a wide left column and a narrower right one.
-    The name and logo sit on the left; the menu and picture sit on the right.
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
   -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="index.html">jon rogers</a>
+      </div>
+      <!-- The headline links to Jon's essay. Like the menu, it looks like
+      plain text and turns magenta when you point at it. -->
+      <h1><a href="resisting-big-tech.html">resisting big tech</a></h1>
+    </header>
 
-  <header class="masthead">
-    <a class="name" href="index.html">jon rogers</a>
-
-    <!-- These pages don't exist yet. Each link will work once its page is made. -->
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="projects.html">things</a></li>
         <li><a href="cv.html">cv</a></li>
@@ -33,42 +44,27 @@
       </ul>
     </nav>
 
-    <!--
-      The hand-drawn logo: "I", a drawing of an LED, then "digital".
-      <picture> lets the browser choose: in dark mode it loads the
-      version with light pencil lines on a see-through background.
-      Otherwise it loads the original drawing on paper.
-    -->
-    <picture class="logo">
-      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!-- The headline links to Jon's essay. Like the menu, it looks like
-         plain text and turns magenta when you point at it. -->
-    <h1><a href="resisting-big-tech.html">resisting big tech</a></h1>
-
-    <figure class="future">
-      <!--
-        Two sizes of the same picture. The browser downloads only the one
-        it needs: the small one on ordinary screens, the larger one on
-        high-resolution screens and phones.
-        The alt text describes the picture for people who can't see it.
-        It is a draft written by Claude: please rewrite it in your words.
-      -->
-      <img
-        src="images/future-720.jpg"
-        srcset="images/future-720.jpg 720w, images/future-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="1080" height="608"
-        alt="An illustration of two places side by side. On the left, in a Scottish harbour-town workshop, people make and mend electronics around a shared table under a blackboard headed ReWild Notices. On the right, a family in an Indian village courtyard 3D print, share food and look after a baby.">
-      <figcaption>this is the future i want!</figcaption>
-    </figure>
-
-  </main>
+    <main id="main">
+  
+      <figure class="future">
+        <!--
+          Two sizes of the same picture. The browser downloads only the one
+          it needs: the small one on ordinary screens, the larger one on
+          high-resolution screens and phones.
+          The alt text describes the picture for people who can't see it.
+          It is a draft written by Claude: please rewrite it in your words.
+        -->
+        <img
+          src="images/future-720.jpg"
+          srcset="images/future-720.jpg 720w, images/future-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="1080" height="608"
+          alt="An illustration of two places side by side. On the left, in a Scottish harbour-town workshop, people make and mend electronics around a shared table under a blackboard headed ReWild Notices. On the right, a family in an Indian village courtyard 3D print, share food and look after a baby.">
+        <figcaption>this is the future i want!</figcaption>
+      </figure>
+  
+    </main>
+  </div>
 
 </body>
 </html>

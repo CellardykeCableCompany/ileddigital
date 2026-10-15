@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>open-sauce</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="index.html">jon rogers</a>
-    <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="index.html">jon rogers</a>
+        <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+      </div>
+      <h1>adventures in <span class="line">time and spice</span></h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="projects.html">things</a></li>
         <li><a href="cv.html">cv</a></li>
@@ -28,86 +42,79 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <h1>adventures in time and spice</h1>
-
-    <!--
-      open-sauce: adventures in time and spice.
-      The words beside the big picture link to open-sauce/time-and-spice.html,
-      where the writing can be expanded. Below, each recipe links to its own
-      page in the open-sauce folder. Recipes are Jon's, word for word.
-    -->
-    <section class="feature" aria-label="open-sauce">
-      <div class="feature-intro">
-        <img src="images/open-sauce/kitchen.jpg" width="375" height="499"
-          alt="A busy kitchen hob: pans steaming, a curry bubbling with a wooden spoon in it, jars of spices on the shelves behind.">
-        <a class="feature-text" href="open-sauce/time-and-spice.html">
-          <p>Food! Now we’re talking. The kitchen is everything. Anyone that knows me will know this is where my soul reside - and that I am one messy messy cook. Rules are there to learn and then be broken.</p>
-          <p>It’s code. The data are my ingredients. The algorithm my methods. My processor.. well you know.</p>
-          <p>But one ingredient above all else needs to be talked about…</p>
-          <p>… time…</p>
-        </a>
-      </div>
-      <ul class="feature-posts">
-        <li>
-          <a href="open-sauce/aloo-scones.html">
-            <img src="images/open-sauce/aloo-scones-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Aloo Scones</span>
+    <main id="main">
+  
+      <!--
+        open-sauce: adventures in time and spice.
+        The words beside the big picture link to open-sauce/time-and-spice.html,
+        where the writing can be expanded. Below, each recipe links to its own
+        page in the open-sauce folder. Recipes are Jon's, word for word.
+      -->
+      <section class="feature" aria-label="open-sauce">
+        <div class="feature-intro">
+          <img src="images/open-sauce/kitchen.jpg" width="375" height="499"
+            alt="A busy kitchen hob: pans steaming, a curry bubbling with a wooden spoon in it, jars of spices on the shelves behind.">
+          <a class="feature-text" href="open-sauce/time-and-spice.html">
+            <p>Food! Now we’re talking. The kitchen is everything. Anyone that knows me will know this is where my soul reside - and that I am one messy messy cook. Rules are there to learn and then be broken.</p>
+            <p>It’s code. The data are my ingredients. The algorithm my methods. My processor.. well you know.</p>
+            <p>But one ingredient above all else needs to be talked about…</p>
+            <p>… time…</p>
           </a>
-        </li>
-        <li>
-          <a href="open-sauce/satay-omelette-noodles.html">
-            <img src="images/open-sauce/satay-noodles-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Satay omelette noodles</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/a-template-for-a-kedgeree.html">
-            <img src="images/open-sauce/kedgeree-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">A template for a kedgeree</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/aakash-eggs.html">
-            <img src="images/open-sauce/aakash-eggs-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Aakash eggs</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/crab-barlyani.html">
-            <span class="no-image" aria-hidden="true"></span>
-            <span class="title">Crab Barlyani</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/barley-risotto.html">
-            <img src="images/open-sauce/barley-risotto-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Barley risotto</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/barley-kedge.html">
-            <img src="images/open-sauce/barley-kedge-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Barley kedge</span>
-          </a>
-        </li>
-        <li>
-          <a href="open-sauce/barleyani.html">
-            <img src="images/open-sauce/barleyani-thumb.jpg" width="320" height="320" alt="">
-            <span class="title">Barleyani</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </main>
+        </div>
+        <ul class="feature-posts">
+          <li>
+            <a href="open-sauce/aloo-scones.html">
+              <img src="images/open-sauce/aloo-scones-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Aloo Scones</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/satay-omelette-noodles.html">
+              <img src="images/open-sauce/satay-noodles-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Satay omelette noodles</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/a-template-for-a-kedgeree.html">
+              <img src="images/open-sauce/kedgeree-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">A template for a kedgeree</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/aakash-eggs.html">
+              <img src="images/open-sauce/aakash-eggs-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Aakash eggs</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/crab-barlyani.html">
+              <span class="no-image" aria-hidden="true"></span>
+              <span class="title">Crab Barlyani</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/barley-risotto.html">
+              <img src="images/open-sauce/barley-risotto-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Barley risotto</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/barley-kedge.html">
+              <img src="images/open-sauce/barley-kedge-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Barley kedge</span>
+            </a>
+          </li>
+          <li>
+            <a href="open-sauce/barleyani.html">
+              <img src="images/open-sauce/barleyani-thumb.jpg" width="320" height="320" alt="">
+              <span class="title">Barleyani</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+  
+    </main>
+  </div>
 
 </body>
 </html>

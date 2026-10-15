@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SelfReflector</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../projects.html" aria-label="Back to things">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../projects.html" aria-label="Back to things">&lt;</a>
+      </div>
+      <!--
+      The words on this page are Jon's, exactly as written.
+      The image alt text describes the picture for people who can't see it.
+      It is a draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>SelfReflector</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html" aria-current="true">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,47 +48,34 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      The words on this page are Jon's, exactly as written.
-      The image alt text describes the picture for people who can't see it.
-      It is a draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>SelfReflector</h1>
-
-    <div class="lead">
-      <img class="project-image" src="../images/projects/selfreflector-556.jpg"
-        width="556" height="304"
-        alt="A man in a flat cap and scarf, seen through the copper ring of the SelfReflector mirror.">
-      <p>The SelfReflector is an internet connector mirror that uses facial recognition to guess your age and play music from when it thinks you were 15. Installed in <a href="https://landospex.com/">Land O Spex</a> in Dundee in 2015 it was used to research and understand possible futures of the internet of things and AI in playful ways.</p>
-      <p class="project-link"><a href="https://dl.acm.org/doi/10.1145/3173574.3173997">https://dl.acm.org/doi/10.1145/3173574.3173997</a></p>
-    </div>
-
-    <section class="ledger" aria-labelledby="collaborated">
-      <h2 id="collaborated">collaborated with</h2>
-      <ul class="people">
-        <li><a href="https://www.jaynewallace.com/">Jayne Wallace</a></li>
-        <li><a href="https://www.mrshorter.co.uk/">Mike Shorter</a></li>
-      </ul>
-    </section>
-
-    <section class="ledger" aria-labelledby="publication">
-      <h2 id="publication">publication</h2>
-      <ol>
-        <li><span class="what">Jayne Wallace, Jon Rogers, Michael Shorter, Pete Thomas, Martin Skelly, and Richard Cook. 2018. <a href="https://doi.org/10.1145/3173574.3173997">The SelfReflector: Design, IoT and the High Street</a>. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI '18). Association for Computing Machinery, New York, NY, USA, Paper 423, 1–12. <a href="https://doi.org/10.1145/3173574.3173997">https://doi.org/10.1145/3173574.3173997</a></span></li>
-        <li><span class="what">Irini Papadimitriou. 2016. <a href="https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016">Digital Design Weekend 2016</a>. V&amp;A Blog, 8 August 2016. <a href="https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016">https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016</a></span></li>
-      </ol>
-    </section>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead">
+        <img class="project-image" src="../images/projects/selfreflector-556.jpg"
+          width="556" height="304"
+          alt="A man in a flat cap and scarf, seen through the copper ring of the SelfReflector mirror.">
+        <p>The SelfReflector is an internet connector mirror that uses facial recognition to guess your age and play music from when it thinks you were 15. Installed in <a href="https://landospex.com/">Land O Spex</a> in Dundee in 2015 it was used to research and understand possible futures of the internet of things and AI in playful ways.</p>
+        <p class="project-link"><a href="https://dl.acm.org/doi/10.1145/3173574.3173997">https://dl.acm.org/doi/10.1145/3173574.3173997</a></p>
+      </div>
+  
+      <section class="ledger" aria-labelledby="collaborated">
+        <h2 id="collaborated">collaborated with</h2>
+        <ul class="people">
+          <li><a href="https://www.jaynewallace.com/">Jayne Wallace</a></li>
+          <li><a href="https://www.mrshorter.co.uk/">Mike Shorter</a></li>
+        </ul>
+      </section>
+  
+      <section class="ledger" aria-labelledby="publication">
+        <h2 id="publication">publication</h2>
+        <ol>
+          <li><span class="what">Jayne Wallace, Jon Rogers, Michael Shorter, Pete Thomas, Martin Skelly, and Richard Cook. 2018. <a href="https://doi.org/10.1145/3173574.3173997">The SelfReflector: Design, IoT and the High Street</a>. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI '18). Association for Computing Machinery, New York, NY, USA, Paper 423, 1–12. <a href="https://doi.org/10.1145/3173574.3173997">https://doi.org/10.1145/3173574.3173997</a></span></li>
+          <li><span class="what">Irini Papadimitriou. 2016. <a href="https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016">Digital Design Weekend 2016</a>. V&amp;A Blog, 8 August 2016. <a href="https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016">https://www.vam.ac.uk/blog/museum-life/digital-design-weekend-2016</a></span></li>
+        </ol>
+      </section>
+  
+    </main>
+  </div>
 
 </body>
 </html>

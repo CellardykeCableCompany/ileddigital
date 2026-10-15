@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barleyani</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+      </div>
+      <!--
+      Jon's recipe, word for word from "Adventures in time and spice".
+      Line breaks are kept as he wrote them. The image alt text is a
+      draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>Barleyani</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,71 +48,58 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      Jon's recipe, word for word from "Adventures in time and spice".
-      Line breaks are kept as he wrote them. The image alt text is a
-      draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>Barleyani</h1>
-
-    <div class="lead recipe">
-      <p class="recipe-note"><em>03.01.24</em></p>
-      <p class="recipe-note"><em>Barley makes a great biryani. 1 cup barley to 2 cups water. Pressure cook 20mins.</em></p>
-      <img class="project-image" src="../images/open-sauce/barleyani-720.jpg"
-        srcset="../images/open-sauce/barleyani-720.jpg 720w, ../images/open-sauce/barleyani-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="720" height="540"
-        alt="Barleyani in a dark blue bowl with greens and a spoon of hot mango pickle, jars of pickle behind.">
-      <p>Soak<br>
-        1 cup barley<br>
-        3 cups water<br>
-        1/2 tsp turmeric<br>
-        Pinch salt</p>
-      <p>Main<br>
-        2 tbl oil<br>
-        1 onion chopped<br>
-        1 tsp mustard seeds<br>
-        10 Curry leaves<br>
-        1 tsp cumin seeds<br>
-        1 bay leaf (fresh)<br>
-        2 green chilli<br>
-        200g firm tofu<br>
-        3cm ginger+2 garlic paste<br>
-        10 cherry tomatoes chopped<br>
-        1/2 tsp turmeric<br>
-        2 tsp veg biryani masala<br>
-        1 tbl ground cumin<br>
-        1/2 cup yogurt<br>
-        Salt (1 tsp)<br>
-        2 cups water</p>
-      <p>Finish<br>
-        Fresh coriander<br>
-        Hot mango pickle<br>
-        Yogurt</p>
-      <p>1 cup barley soaked for 1 hour with 1/2 tspn turmeric and pinch salt</p>
-      <p>Fry things (onion, garlic-ginger paste etc). Add protein (tofu, prawn). Fry 2 mins. Add dry whole spice. Add chopped chili. Add tomatoes. Fry. Add drained barley. Add 1/2 cup yogurt.</p>
-      <p>Add spice - 2tspn veg biryani masala, 1/2 tspn turmeric, 1 tbl cumin…</p>
-      <p>Two cups water.<br>
-        Lid.<br>
-        Pressure.</p>
-      <p>20 min on low.</p>
-      <p>Serve with fresh coriander, pickle, yogurt</p>
-      <p>The time: pressure cooking makes barley possible.<br>
-        The spice: veg biryani masala is essential here</p>
-      <p>I grew up near a village called Berrick Salome…. I live now across the Firth of Firth from North Berwick. Berlin was my home for three years. The Ber has always been close. Ber being barley in old english… berwick/berrick being a barley farm. Not sure about the naming of Berlin… but so much Barley grows wild in the streets.</p>
-      <p>We cook so little with it now, i wanted to understand more about it. Its texture reminds me of more interesting wholemeal short grain rice ive had in bangalore and kerela with babitha. Making a biryani from it feels very natural.</p>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead recipe">
+        <p class="recipe-note"><em>03.01.24</em></p>
+        <p class="recipe-note"><em>Barley makes a great biryani. 1 cup barley to 2 cups water. Pressure cook 20mins.</em></p>
+        <img class="project-image" src="../images/open-sauce/barleyani-720.jpg"
+          srcset="../images/open-sauce/barleyani-720.jpg 720w, ../images/open-sauce/barleyani-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="720" height="540"
+          alt="Barleyani in a dark blue bowl with greens and a spoon of hot mango pickle, jars of pickle behind.">
+        <p>Soak<br>
+          1 cup barley<br>
+          3 cups water<br>
+          1/2 tsp turmeric<br>
+          Pinch salt</p>
+        <p>Main<br>
+          2 tbl oil<br>
+          1 onion chopped<br>
+          1 tsp mustard seeds<br>
+          10 Curry leaves<br>
+          1 tsp cumin seeds<br>
+          1 bay leaf (fresh)<br>
+          2 green chilli<br>
+          200g firm tofu<br>
+          3cm ginger+2 garlic paste<br>
+          10 cherry tomatoes chopped<br>
+          1/2 tsp turmeric<br>
+          2 tsp veg biryani masala<br>
+          1 tbl ground cumin<br>
+          1/2 cup yogurt<br>
+          Salt (1 tsp)<br>
+          2 cups water</p>
+        <p>Finish<br>
+          Fresh coriander<br>
+          Hot mango pickle<br>
+          Yogurt</p>
+        <p>1 cup barley soaked for 1 hour with 1/2 tspn turmeric and pinch salt</p>
+        <p>Fry things (onion, garlic-ginger paste etc). Add protein (tofu, prawn). Fry 2 mins. Add dry whole spice. Add chopped chili. Add tomatoes. Fry. Add drained barley. Add 1/2 cup yogurt.</p>
+        <p>Add spice - 2tspn veg biryani masala, 1/2 tspn turmeric, 1 tbl cumin…</p>
+        <p>Two cups water.<br>
+          Lid.<br>
+          Pressure.</p>
+        <p>20 min on low.</p>
+        <p>Serve with fresh coriander, pickle, yogurt</p>
+        <p>The time: pressure cooking makes barley possible.<br>
+          The spice: veg biryani masala is essential here</p>
+        <p>I grew up near a village called Berrick Salome…. I live now across the Firth of Firth from North Berwick. Berlin was my home for three years. The Ber has always been close. Ber being barley in old english… berwick/berrick being a barley farm. Not sure about the naming of Berlin… but so much Barley grows wild in the streets.</p>
+        <p>We cook so little with it now, i wanted to understand more about it. Its texture reminds me of more interesting wholemeal short grain rice ive had in bangalore and kerela with babitha. Making a biryani from it feels very natural.</p>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>

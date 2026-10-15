@@ -5,19 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Follow That Thing!</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../thoughts.html" aria-label="Back to thoughts">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../thoughts.html" aria-label="Back to thoughts">&lt;</a>
+      </div>
+      <!--
+      Jon's writing, word for word from his Word file "Follow That Thing!".
+      The picture's alt text is a draft by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>Follow That Thing!</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,38 +47,26 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      Jon's writing, word for word from his Word file "Follow That Thing!".
-      The picture's alt text is a draft by Claude: please rewrite it in your words.
-    -->
-
-    <h1>Follow That Thing!</h1>
-
-    <div class="lead essay">
-      <p>15th October 2026. From a train at 3pm to Leuchars.</p>
-      <img class="project-image" src="../images/thoughts/follow-that-thing-720.jpg"
-        srcset="../images/thoughts/follow-that-thing-720.jpg 720w, ../images/thoughts/follow-that-thing-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="720" height="341"
-        alt="Two photos: a dinner of black beans, rice and dips laid out on a wooden table, and the packaging it came from (tins of black beans and tomatoes, a bag of rice, a yoghurt pot and an avocado) on a chopping board.">
-      <p>Last week I was helping a brilliant colleague <a href="https://www.northumbria.ac.uk/about-us/our-staff/f/peter-forman/">Peter Foreman</a> on a grant they were writing. He’s a geographer. Not a subject I thought I would be supporting on a grant - my C at O’Level geography curtailed that path aged 16… but 40 years later (or so), here I am. And wow. If 16 year old Jon knew geography could be as radical and punk as this, he might just might havce considered a path to continue. In the grant was the methodology. A methodology called <em>Follow That Thing</em>. It does what it says on the tin. As a research approach, you start by researching one thing and then allow it to lead the research as it developes. Why haven’t I head of this before? We love mapping in design. <a href="https://www.stby.eu/2020/03/04/lets-talk-maps-and-mapping/">STBY’s work on mapping</a> as a way of understanding the people, the systems and the services that interact. It’s what <a href="https://joler.org/">Vladan Joler</a> and <a href="https://katecrawford.net/">Kate Crawford</a> did when they <a href="https://anatomyof.ai/">unravelled the anatomy of an AI system</a>. It’s what they did when they decided to keep going and map the entire history of social technological invention, power and control in <a href="https://calculatingempires.net/">Calculating Empires.</a></p>
-      <p>Follow That Thing was articulated as an approach by the <a href="https://experts.exeter.ac.uk/588-ian-cook-et-al">cultural geographer Dr Ian Cook</a> through their paper <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8330.2004.00441.x">Follow That Thing: Papaya.</a> It’s a beautiful paper. Perhaps one of my favourite. The language pops and fizzes with detail and enthusiasm. It’s how academic writing could and should be (a theme i’ll come back to). I tested out the idea with students this week in Jon’s Rubbish Lecture - where I asked them to follow the thing or last night’s dinner - taking for a walk the packaging from a simple mexican black beans and rice recipe favourite. For Product Designers this is important. We are so used to doing “exploded” diagrams of things. But the edges of the diagram stop at the edges of the product. Useless if you’re designing a cloud based voice assistant, where the “inside” is in a far off remote cloud. Far beyond the jurisdiction of the government where the physical thing resides. It’s also far bigger on the inside (you can read about my thoughts on voice assistantsd here), like Doctor Who’s TARDIS. Follow The Thing gives a framework for revisting the full extent of a product. It’s materials. The regulation surrounding it. The data services if it’s connected. As Vladan said “<a href="https://www.youtube.com/watch?v=3oCGYOSxRw0">if you follow the datastream and you end up at a data centre”</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. He also says he is surprised that there seem to be so few maps made like this. Perhaps just perhaps, that by mapping we expose the power and by knowing where the power lies, we can find space outside of that. To make maps of our own. To find that third, unoccupied, space for and with our communities. Now there’s a thing to follow…</p>
-      <aside class="footnotes" aria-label="Footnotes">
-        <ol>
-          <li id="fn1"><p>watch from 6.26<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-        </ol>
-      </aside>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead essay">
+        <p>15th October 2026. From a train at 3pm to Leuchars.</p>
+        <img class="project-image" src="../images/thoughts/follow-that-thing-720.jpg"
+          srcset="../images/thoughts/follow-that-thing-720.jpg 720w, ../images/thoughts/follow-that-thing-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="720" height="341"
+          alt="Two photos: a dinner of black beans, rice and dips laid out on a wooden table, and the packaging it came from (tins of black beans and tomatoes, a bag of rice, a yoghurt pot and an avocado) on a chopping board.">
+        <p>Last week I was helping a brilliant colleague <a href="https://www.northumbria.ac.uk/about-us/our-staff/f/peter-forman/">Peter Foreman</a> on a grant they were writing. He’s a geographer. Not a subject I thought I would be supporting on a grant - my C at O’Level geography curtailed that path aged 16… but 40 years later (or so), here I am. And wow. If 16 year old Jon knew geography could be as radical and punk as this, he might just might havce considered a path to continue. In the grant was the methodology. A methodology called <em>Follow That Thing</em>. It does what it says on the tin. As a research approach, you start by researching one thing and then allow it to lead the research as it developes. Why haven’t I head of this before? We love mapping in design. <a href="https://www.stby.eu/2020/03/04/lets-talk-maps-and-mapping/">STBY’s work on mapping</a> as a way of understanding the people, the systems and the services that interact. It’s what <a href="https://joler.org/">Vladan Joler</a> and <a href="https://katecrawford.net/">Kate Crawford</a> did when they <a href="https://anatomyof.ai/">unravelled the anatomy of an AI system</a>. It’s what they did when they decided to keep going and map the entire history of social technological invention, power and control in <a href="https://calculatingempires.net/">Calculating Empires.</a></p>
+        <p>Follow That Thing was articulated as an approach by the <a href="https://experts.exeter.ac.uk/588-ian-cook-et-al">cultural geographer Dr Ian Cook</a> through their paper <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8330.2004.00441.x">Follow That Thing: Papaya.</a> It’s a beautiful paper. Perhaps one of my favourite. The language pops and fizzes with detail and enthusiasm. It’s how academic writing could and should be (a theme i’ll come back to). I tested out the idea with students this week in Jon’s Rubbish Lecture - where I asked them to follow the thing or last night’s dinner - taking for a walk the packaging from a simple mexican black beans and rice recipe favourite. For Product Designers this is important. We are so used to doing “exploded” diagrams of things. But the edges of the diagram stop at the edges of the product. Useless if you’re designing a cloud based voice assistant, where the “inside” is in a far off remote cloud. Far beyond the jurisdiction of the government where the physical thing resides. It’s also far bigger on the inside (you can read about my thoughts on voice assistantsd here), like Doctor Who’s TARDIS. Follow The Thing gives a framework for revisting the full extent of a product. It’s materials. The regulation surrounding it. The data services if it’s connected. As Vladan said “<a href="https://www.youtube.com/watch?v=3oCGYOSxRw0">if you follow the datastream and you end up at a data centre”</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. He also says he is surprised that there seem to be so few maps made like this. Perhaps just perhaps, that by mapping we expose the power and by knowing where the power lies, we can find space outside of that. To make maps of our own. To find that third, unoccupied, space for and with our communities. Now there’s a thing to follow…</p>
+        <aside class="footnotes" aria-label="Footnotes">
+          <ol>
+            <li id="fn1"><p>watch from 6.26<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+          </ol>
+        </aside>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>

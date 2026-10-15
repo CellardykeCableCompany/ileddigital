@@ -5,19 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>adventures in time and spice</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+      </div>
+      <!--
+      This page is where the writing about time and spice can grow.
+      For now it has the same picture and words as the open-sauce page.
+      -->
+      
+      <h1>adventures in <span class="line">time and spice</span></h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,31 +47,19 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      This page is where the writing about time and spice can grow.
-      For now it has the same picture and words as the open-sauce page.
-    -->
-
-    <h1>adventures in time and spice</h1>
-
-    <div class="lead">
-      <img class="project-image" src="../images/open-sauce/kitchen.jpg" width="375" height="499"
-        alt="A busy kitchen hob: pans steaming, a curry bubbling with a wooden spoon in it, jars of spices on the shelves behind.">
-      <p>Food! Now we’re talking. The kitchen is everything. Anyone that knows me will know this is where my soul reside - and that I am one messy messy cook. Rules are there to learn and then be broken.</p>
-      <p>It’s code. The data are my ingredients. The algorithm my methods. My processor.. well you know.</p>
-      <p>But one ingredient above all else needs to be talked about…</p>
-      <p>… time…</p>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead">
+        <img class="project-image" src="../images/open-sauce/kitchen.jpg" width="375" height="499"
+          alt="A busy kitchen hob: pans steaming, a curry bubbling with a wooden spoon in it, jars of spices on the shelves behind.">
+        <p>Food! Now we’re talking. The kitchen is everything. Anyone that knows me will know this is where my soul reside - and that I am one messy messy cook. Rules are there to learn and then be broken.</p>
+        <p>It’s code. The data are my ingredients. The algorithm my methods. My processor.. well you know.</p>
+        <p>But one ingredient above all else needs to be talked about…</p>
+        <p>… time…</p>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>

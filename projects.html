@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>things</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="index.html">jon rogers</a>
-    <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="index.html">jon rogers</a>
+        <a class="back" href="index.html" aria-label="Back to home">&lt;</a>
+      </div>
+      <h1>resisting big tech <span class="accent line">through design</span></h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="projects.html" aria-current="page">things</a></li>
         <li><a href="cv.html">cv</a></li>
@@ -28,48 +42,41 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <h1>resisting big tech <span class="accent line">through design</span></h1>
-
-    <!--
-      The project grid. Each card is a landscape picture and a name, and the
-      whole card links to that project's own page in the projects folder.
-      To add a project: make its page in projects/, put a 480 x 320 picture
-      in images/projects/, then copy one <li> below and change it.
-      The pictures have empty alt text because the name under each one
-      already says what it is.
-    -->
-    <section class="projects" aria-label="Projects">
-      <ul>
-        <li>
-          <a href="projects/pegbits.html">
-            <img src="images/projects/pegbits-thumb.jpg" width="480" height="320" alt="">
-            <span class="title">pegBits</span>
-          </a>
-        </li>
-        <li>
-          <a href="projects/selfreflector.html">
-            <img src="images/projects/selfreflector-thumb.jpg" width="480" height="320" alt="">
-            <span class="title">SelfReflector</span>
-          </a>
-        </li>
-        <li>
-          <a href="projects/hicams.html">
-            <img src="images/projects/hicams-thumb.jpg" width="480" height="320" alt="">
-            <span class="title">hiCams</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </main>
+    <main id="main">
+  
+      <!--
+        The project grid. Each card is a landscape picture and a name, and the
+        whole card links to that project's own page in the projects folder.
+        To add a project: make its page in projects/, put a 480 x 320 picture
+        in images/projects/, then copy one <li> below and change it.
+        The pictures have empty alt text because the name under each one
+        already says what it is.
+      -->
+      <section class="projects" aria-label="Projects">
+        <ul>
+          <li>
+            <a href="projects/pegbits.html">
+              <img src="images/projects/pegbits-thumb.jpg" width="480" height="320" alt="">
+              <span class="title">pegBits</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects/selfreflector.html">
+              <img src="images/projects/selfreflector-thumb.jpg" width="480" height="320" alt="">
+              <span class="title">SelfReflector</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects/hicams.html">
+              <img src="images/projects/hicams-thumb.jpg" width="480" height="320" alt="">
+              <span class="title">hiCams</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+  
+    </main>
+  </div>
 
 </body>
 </html>

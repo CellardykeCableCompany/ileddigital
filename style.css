@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No web fonts, no JavaScript. Everything here is plain CSS.
 
-   Every page links to this file as style.css?v=10. Browsers keep a copy
+   Every page links to this file as style.css?v=11. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -102,48 +102,93 @@ a:focus-visible {
   background: var(--paper);
 }
 
-/* The header and the main content share the same edges.
+/* ---------- The page frame ----------
+   Every page has two parts, side by side:
+   - the rail, in the left-hand column: logo, your name, "<" and the
+     headline. It stays put while the page scrolls, so the way home is
+     always there.
+   - the menu and the content, which scroll past on the right.
+   The content can still use the left-hand column (the dates on the cv,
+   the caption on the home page); it slides underneath the rail.
    As in the sketch, the right margin is wider than the left. */
-.masthead,
-main {
+
+.page {
+  --top: max(0.75rem, calc(0.85 * var(--u)));        /* space above the logo */
+  --logo: max(3rem, calc(3.15 * var(--u)));          /* height of the logo */
+  --logo-gap: max(1rem, calc(1.45 * var(--u)));      /* space under the logo */
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  column-gap: var(--gutter);
+  align-items: start;
   max-width: calc(100 * var(--u));
   margin-inline: auto;
   padding-left: calc(3.33 * var(--u));
   padding-right: calc(10.73 * var(--u));
 }
 
-
-/* ---------- Header: name, menu and logo ---------- */
-
-.masthead {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 2rem;
-  align-items: start;
-  padding-top: max(0.75rem, calc(0.85 * var(--u)));
-}
-
-/* The logo sits at the very top. Your name and the menu sit on the
-   row below it, side by side. */
-.name {
+/* The rail spans the whole height of the page's grid, so it can stay
+   stuck to the top of the window all the way down. */
+.rail {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1 / span 2;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-top: var(--top);
+  pointer-events: none;          /* clicks pass through its empty space */
 }
 
-/* The menu sits at the right, exactly as wide as the picture below.
-   Its first link starts at the picture's left edge and its last link
-   ends at the picture's right edge. */
-.masthead nav {
+.rail a,
+.rail picture {
+  pointer-events: auto;
+}
+
+/* Words and logo in the rail sit on the page colour, so content
+   sliding underneath doesn't show through them. */
+.rail .name,
+.rail .back,
+.rail h1,
+.logo img {
+  background: var(--paper);
+}
+
+.logo {
+  display: block;
+  margin-bottom: var(--logo-gap);
+}
+
+.logo img {
+  width: auto;
+  height: var(--logo);
+}
+
+/* Your name on the left, "<" at the right end of the column, just
+   short of the menu, as in the sketch. */
+.rail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.back {
+  margin-right: calc(1.6em - var(--gutter));
+}
+
+/* The menu sits at the right, exactly as wide as the picture below,
+   level with your name. */
+.menu {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   justify-self: end;
   width: var(--right);
+  margin-top: calc(var(--top) + var(--logo) + var(--logo-gap));
 }
 
 /* The line under the menu is a hairline: half a pixel draws the
    thinnest line a high-resolution screen can show, and browsers
    round it up to one pixel on ordinary screens. */
-.masthead ul {
+.menu ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -155,72 +200,41 @@ main {
   border-bottom: 0.5px solid var(--ink);
 }
 
-/* The "<" back button sits just left of the menu, on the same line.
-   It shares the menu's grid cell and is pushed left by the menu's
-   width plus a small gap. */
-.back {
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: end;
-  margin-right: calc(var(--right) + 1.6em);
-}
-
 /* The page you're on shows in magenta in the menu. On a single
-   project's page, "projects" stays magenta too. */
-.masthead a[aria-current] {
+   project's page, its section stays magenta too. */
+.menu a[aria-current] {
   color: var(--magenta);
 }
 
-.logo {
-  grid-column: 1;
-  grid-row: 1;
-  margin-bottom: max(1rem, calc(1.45 * var(--u)));
-}
-
-.logo img {
-  width: auto;
-  height: max(3rem, calc(3.15 * var(--u)));
-}
-
-
-/* ---------- Headline and content ----------
-   The headline sits in the left-hand column, just under the menu line.
-   Whatever comes first after it (the picture, the project grid, the
-   text) shares the same row, in the right-hand column, starting a
-   little lower. Everything after that follows underneath. */
-
+/* The content runs across both columns, under the menu. Its first
+   block starts a little below the menu line. */
 main {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
-/* Everything in main shares one full-width column; the headline and
-   the first block overlap in its first row. */
-main > * {
-  grid-column: 1;
+main > :first-child {
+  margin-top: max(2rem, calc(3.65 * var(--u)));
 }
+
+
+/* ---------- Headline ---------- */
 
 h1 {
-  margin: max(1rem, calc(1.1 * var(--u))) 0 0;
+  margin: max(1rem, calc(1.9 * var(--u))) 0 0;
   font-size: max(1.75rem, calc(2.6 * var(--u)));
   font-weight: normal;
   line-height: 1.5;
 }
 
-main > h1 {
-  grid-row: 1;
-  max-width: calc(100% - var(--right) - var(--gutter));
-  position: relative;
-}
-
-main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
-  grid-row: 1;
-  margin-top: max(2rem, calc(3.65 * var(--u)));
+.rail h1 {
+  width: fit-content;            /* the page colour sits only behind the words */
+  max-width: 100%;               /* never wider than the left-hand column */
+  overflow-wrap: break-word;     /* a very long word breaks rather than spill over */
 }
 
 /* A second line of headline that always starts on its own line,
-   as in "through making" on the projects page. */
+   as in "through design" on the things page. */
 h1 .line {
   display: block;
 }
@@ -542,19 +556,58 @@ a.feature-text {
 
 /* ---------- Narrower windows ---------- */
 
-/* Below about 1024px the left-hand column gets too narrow for the
-   headline, so it goes back above the content, full width. */
+/* Below about 1024px there's no room for a rail. Everything stacks:
+   logo, your name and "<", menu, headline, content. Your name and "<"
+   become a bar that stays at the top of the window as you scroll. */
 @media (max-width: 64rem) {
-  main > h1,
-  main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
-    grid-row: auto;
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;        /* each piece takes the full width */
   }
 
-  main > h1 {
-    max-width: none;
+  .rail {
+    display: contents;           /* its pieces join the stack */
   }
 
-  main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
+  .logo {
+    order: 1;
+    padding-top: var(--top);
+  }
+
+  .rail-top {
+    order: 2;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-block: 0.5rem;
+    margin-block: -0.5rem;
+    background: var(--paper);
+    /* stretch the bar's background to both edges of the window */
+    box-shadow: 0 0 0 100vmax var(--paper);
+    clip-path: inset(0 -100vmax);
+  }
+
+  .back {
+    margin-right: 0;
+  }
+
+  .menu {
+    order: 3;
+    margin-top: 0.75rem;
+    align-self: flex-end;
+  }
+
+  .rail h1 {
+    order: 4;
+    margin-top: max(1rem, calc(1.1 * var(--u)));
+  }
+
+  main {
+    order: 5;
+  }
+
+  main > :first-child {
     margin-top: 2rem;
   }
 }
@@ -619,30 +672,18 @@ a.feature-text {
   }
 }
 
-/* Below about 770px, your name and the menu no longer fit side by
-   side. The menu drops to the next line, and the menu, line and
-   picture all run the full width. */
+/* Below about 770px the menu, its line and the pictures all run the
+   full width of the screen. */
 @media (max-width: 48rem) {
   :root {
     --right: 100%;
   }
 
-  .masthead nav {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    margin-top: 0.75rem;
-  }
-
-  /* With the menu on its own line, "<" sits at the right of your name. */
-  .back {
-    margin-right: 0;
-  }
 }
 
 /* On phones, equal margins on both sides, and two projects across. */
 @media (max-width: 40rem) {
-  .masthead,
-  main {
+  .page {
     padding-inline: 1.25rem;
   }
 

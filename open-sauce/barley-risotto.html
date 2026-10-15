@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barley risotto</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+      </div>
+      <!--
+      Jon's recipe, word for word from "Adventures in time and spice".
+      Line breaks are kept as he wrote them. The image alt text is a
+      draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>Barley risotto</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,47 +48,34 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      Jon's recipe, word for word from "Adventures in time and spice".
-      Line breaks are kept as he wrote them. The image alt text is a
-      draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>Barley risotto</h1>
-
-    <div class="lead recipe">
-      <img class="project-image" src="../images/open-sauce/barley-risotto-720.jpg"
-        srcset="../images/open-sauce/barley-risotto-720.jpg 720w, ../images/open-sauce/barley-risotto-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="720" height="540"
-        alt="Barley risotto on a pale green plate, piled with rocket and grated parmesan.">
-      <p>1 cup barley<br>
-        3 cups water<br>
-        1/2 cup wine<br>
-        25min pressure cook</p>
-      <p>2 garlic<br>
-        1 stick celery<br>
-        1 cup barley<br>
-        3 cups water<br>
-        1/2 cup wine</p>
-      <p>50g butter<br>
-        Handful(s) wild garlic<br>
-        50g goats cheese<br>
-        150g smoked trout</p>
-      <p>In pressure cooker.Fry 2 cloves garlic and 2 sticks celery (chopped) in olive oil. Add barley. Fry. 5 min gentle. Add water and wine. Salt and pepper. Pressure cook.</p>
-      <p>Stir in few knobs butter. Handfuls of wild garlic. 50g soft goats cheese and 150g smoked trout. Be gentle. A few mins.</p>
-      <p>Serve with rocket, parmesan and drizzle olive oil.</p>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead recipe">
+        <img class="project-image" src="../images/open-sauce/barley-risotto-720.jpg"
+          srcset="../images/open-sauce/barley-risotto-720.jpg 720w, ../images/open-sauce/barley-risotto-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="720" height="540"
+          alt="Barley risotto on a pale green plate, piled with rocket and grated parmesan.">
+        <p>1 cup barley<br>
+          3 cups water<br>
+          1/2 cup wine<br>
+          25min pressure cook</p>
+        <p>2 garlic<br>
+          1 stick celery<br>
+          1 cup barley<br>
+          3 cups water<br>
+          1/2 cup wine</p>
+        <p>50g butter<br>
+          Handful(s) wild garlic<br>
+          50g goats cheese<br>
+          150g smoked trout</p>
+        <p>In pressure cooker.Fry 2 cloves garlic and 2 sticks celery (chopped) in olive oil. Add barley. Fry. 5 min gentle. Add water and wine. Salt and pepper. Pressure cook.</p>
+        <p>Stir in few knobs butter. Handfuls of wild garlic. 50g soft goats cheese and 150g smoked trout. Be gentle. A few mins.</p>
+        <p>Serve with rocket, parmesan and drizzle olive oil.</p>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>

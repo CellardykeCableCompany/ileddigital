@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>pegBits</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../projects.html" aria-label="Back to things">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../projects.html" aria-label="Back to things">&lt;</a>
+      </div>
+      <!--
+      The words on this page are Jon's, exactly as written.
+      The image alt text describes the picture for people who can't see it.
+      It is a draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>pegBits</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html" aria-current="true">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,50 +48,37 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      The words on this page are Jon's, exactly as written.
-      The image alt text describes the picture for people who can't see it.
-      It is a draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>pegBits</h1>
-
-    <div class="lead">
-      <img class="project-image" src="../images/projects/pegbits-720.jpg"
-        srcset="../images/projects/pegbits-720.jpg 720w, ../images/projects/pegbits-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="1080" height="720"
-        alt="pegBits: a small device built on a teal pegboard, with a screen in a white frame and a pink carrying cord.">
-      <p>Right now we’re working on this becoming a social enterprise - want to get involved? <a href="mailto:ileddigital@gmail.com">ileddigital@gmail.com</a></p>
-      <p>pegBits is a standardised and scalable open source pegboard based system for prototyping open hardware technologies from component to artefact. It works on the international standard for building with electronics based on though-hole Integrated Circuits (ICs). Through-hole ICs are based on a standard hole separation of 0.1” (2.54mm). PegBits are centred around the most commonly available existing standards in electronic and mechanical system design, namely on circuit boards (e.g stripboard), screws, spacers and inserts — all things that are low-priced, scalable and non-proprietary components that are commonly used within the open source electronics community. So pegBits seek to integrate physical computing into the physical world akin to how Meccano or Lego afford adaptation and construction through utilising standardisation and constraints.</p>
-      <p class="project-link"><a href="https://hicraftnorthumbria.org/craft-investigations/pegbits/">https://hicraftnorthumbria.org/craft-investigations/pegbits/</a></p>
-    </div>
-
-    <section class="ledger" aria-labelledby="collaborated">
-      <h2 id="collaborated">collaborated with</h2>
-      <ul class="people">
-        <li><a href="https://tommetcalfe.com/">Tom Metcalfe</a></li>
-        <li><a href="https://www.mrshorter.co.uk/">Mike Shorter</a></li>
-        <li><a href="https://www.northumbria.ac.uk/about-us/our-staff/m/justin-marshall/">Justin Marshall</a></li>
-      </ul>
-    </section>
-
-    <section class="ledger" aria-labelledby="publication">
-      <h2 id="publication">publication</h2>
-      <ol>
-        <li><span class="what">Jon Rogers, Justin Marshall, Jayne Wallace, Tom Metcalfe, Nick Taylor, Romit Raj, Jayn Verkerk, and Philip Heslop. 2025. <a href="https://doi.org/10.1145/3689050.3705978">PegBits: Experimenting with a 0.1" system for open hardware prototyping</a>. In Proceedings of the Nineteenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '25). Association for Computing Machinery, New York, NY, USA, Article 57, 1–7. <a href="https://doi.org/10.1145/3689050.3705978">https://doi.org/10.1145/3689050.3705978</a></span></li>
-      </ol>
-    </section>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead">
+        <img class="project-image" src="../images/projects/pegbits-720.jpg"
+          srcset="../images/projects/pegbits-720.jpg 720w, ../images/projects/pegbits-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="1080" height="720"
+          alt="pegBits: a small device built on a teal pegboard, with a screen in a white frame and a pink carrying cord.">
+        <p>Right now we’re working on this becoming a social enterprise - want to get involved? <a href="mailto:ileddigital@gmail.com">ileddigital@gmail.com</a></p>
+        <p>pegBits is a standardised and scalable open source pegboard based system for prototyping open hardware technologies from component to artefact. It works on the international standard for building with electronics based on though-hole Integrated Circuits (ICs). Through-hole ICs are based on a standard hole separation of 0.1” (2.54mm). PegBits are centred around the most commonly available existing standards in electronic and mechanical system design, namely on circuit boards (e.g stripboard), screws, spacers and inserts — all things that are low-priced, scalable and non-proprietary components that are commonly used within the open source electronics community. So pegBits seek to integrate physical computing into the physical world akin to how Meccano or Lego afford adaptation and construction through utilising standardisation and constraints.</p>
+        <p class="project-link"><a href="https://hicraftnorthumbria.org/craft-investigations/pegbits/">https://hicraftnorthumbria.org/craft-investigations/pegbits/</a></p>
+      </div>
+  
+      <section class="ledger" aria-labelledby="collaborated">
+        <h2 id="collaborated">collaborated with</h2>
+        <ul class="people">
+          <li><a href="https://tommetcalfe.com/">Tom Metcalfe</a></li>
+          <li><a href="https://www.mrshorter.co.uk/">Mike Shorter</a></li>
+          <li><a href="https://www.northumbria.ac.uk/about-us/our-staff/m/justin-marshall/">Justin Marshall</a></li>
+        </ul>
+      </section>
+  
+      <section class="ledger" aria-labelledby="publication">
+        <h2 id="publication">publication</h2>
+        <ol>
+          <li><span class="what">Jon Rogers, Justin Marshall, Jayne Wallace, Tom Metcalfe, Nick Taylor, Romit Raj, Jayn Verkerk, and Philip Heslop. 2025. <a href="https://doi.org/10.1145/3689050.3705978">PegBits: Experimenting with a 0.1" system for open hardware prototyping</a>. In Proceedings of the Nineteenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '25). Association for Computing Machinery, New York, NY, USA, Article 57, 1–7. <a href="https://doi.org/10.1145/3689050.3705978">https://doi.org/10.1145/3689050.3705978</a></span></li>
+        </ol>
+      </section>
+  
+    </main>
+  </div>
 
 </body>
 </html>

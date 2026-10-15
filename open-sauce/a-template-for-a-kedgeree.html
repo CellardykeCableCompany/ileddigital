@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A template for a kedgeree</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=10">
+  <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- The header is the same on every page. aria-current marks where you
-       are, and style.css colours that link magenta. -->
-  <header class="masthead">
-    <a class="name" href="../index.html">jon rogers</a>
-    <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../open-sauce.html" aria-label="Back to open-sauce">&lt;</a>
+      </div>
+      <!--
+      Jon's recipe, word for word from "Adventures in time and spice".
+      Line breaks are kept as he wrote them. The image alt text is a
+      draft written by Claude: please rewrite it in your words.
+      -->
+      
+      <h1>A template for a kedgeree</h1>
+    </header>
 
-    <nav aria-label="Main">
+    <nav class="menu" aria-label="Main">
       <ul>
         <li><a href="../projects.html">things</a></li>
         <li><a href="../cv.html">cv</a></li>
@@ -28,49 +48,36 @@
       </ul>
     </nav>
 
-    <picture class="logo">
-      <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
-      <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
-    </picture>
-  </header>
-
-  <main id="main">
-
-    <!--
-      Jon's recipe, word for word from "Adventures in time and spice".
-      Line breaks are kept as he wrote them. The image alt text is a
-      draft written by Claude: please rewrite it in your words.
-    -->
-
-    <h1>A template for a kedgeree</h1>
-
-    <div class="lead recipe">
-      <p class="recipe-note">Makes for 2+ peoples</p>
-      <img class="project-image" src="../images/open-sauce/kedgeree-720.jpg"
-        srcset="../images/open-sauce/kedgeree-720.jpg 720w, ../images/open-sauce/kedgeree-1080.jpg 1080w"
-        sizes="(min-width: 48rem) 37vw, 100vw"
-        width="720" height="960"
-        alt="A pan of kedgeree: spiced rice with haddock, egg, coriander and dried red chillies.">
-      <p>Cook 1 cup of brown rice<br>
-        Hard boil 2 eggs<br>
-        Gently steam 2 undyed smoked haddock from Doig’s</p>
-      <p>Chop 1 onion, 2 chillies<br>
-        Fry onion, chillies on medium heat for 5 mins (until starting to brown a little)<br>
-        Add 1 tsp mustard seeds, around 10 curry leaves, seeds of 1 black cardomon and two dried red chillies from Deli (neha chillies)<br>
-        When seeds splutter mix in the cooked rice<br>
-        Add 1/4 tsp turmeric, 3 tsp cumin, 1 tsp coriander, 1 tsp fish masala from deli (neha fish masala)<br>
-        Salt + pepper.<br>
-        <strong>TASTE!</strong> Adjust spices - normally add more cumin + salt… a little more fish masala if needed<br>
-        Add egg (break up in to 4 pieces per egg). Add haddock (break up a little). Mix in.<br>
-        Cook on gentle (electric 2) for 5 mins - stirring once or twice<br>
-        <strong>TASTE!</strong> and adjust<br>
-        Add fresh coriander, squeeze of lemon..<br>
-        <strong>TASTE and adjust lemon</strong></p>
-      <p><strong>Serve with pickles, indian sauerkraut, yogurt, and a sprinkle of salt and vinegar crisps!<br>
-        (Need to ACTUALLY TRY THAT… ha ha)</strong></p>
-    </div>
-
-  </main>
+    <main id="main">
+  
+      <div class="lead recipe">
+        <p class="recipe-note">Makes for 2+ peoples</p>
+        <img class="project-image" src="../images/open-sauce/kedgeree-720.jpg"
+          srcset="../images/open-sauce/kedgeree-720.jpg 720w, ../images/open-sauce/kedgeree-1080.jpg 1080w"
+          sizes="(min-width: 48rem) 37vw, 100vw"
+          width="720" height="960"
+          alt="A pan of kedgeree: spiced rice with haddock, egg, coriander and dried red chillies.">
+        <p>Cook 1 cup of brown rice<br>
+          Hard boil 2 eggs<br>
+          Gently steam 2 undyed smoked haddock from Doig’s</p>
+        <p>Chop 1 onion, 2 chillies<br>
+          Fry onion, chillies on medium heat for 5 mins (until starting to brown a little)<br>
+          Add 1 tsp mustard seeds, around 10 curry leaves, seeds of 1 black cardomon and two dried red chillies from Deli (neha chillies)<br>
+          When seeds splutter mix in the cooked rice<br>
+          Add 1/4 tsp turmeric, 3 tsp cumin, 1 tsp coriander, 1 tsp fish masala from deli (neha fish masala)<br>
+          Salt + pepper.<br>
+          <strong>TASTE!</strong> Adjust spices - normally add more cumin + salt… a little more fish masala if needed<br>
+          Add egg (break up in to 4 pieces per egg). Add haddock (break up a little). Mix in.<br>
+          Cook on gentle (electric 2) for 5 mins - stirring once or twice<br>
+          <strong>TASTE!</strong> and adjust<br>
+          Add fresh coriander, squeeze of lemon..<br>
+          <strong>TASTE and adjust lemon</strong></p>
+        <p><strong>Serve with pickles, indian sauerkraut, yogurt, and a sprinkle of salt and vinegar crisps!<br>
+          (Need to ACTUALLY TRY THAT… ha ha)</strong></p>
+      </div>
+  
+    </main>
+  </div>
 
 </body>
 </html>
