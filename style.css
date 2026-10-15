@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No web fonts, no JavaScript. Everything here is plain CSS.
 
-   Every page links to this file as style.css?v=7. Browsers keep a copy
+   Every page links to this file as style.css?v=8. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -204,7 +204,7 @@ main > h1 {
   position: relative;
 }
 
-main > h1 + :is(.future, .projects, .lead, .ledger) {
+main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
   grid-row: 1;
   margin-top: max(2rem, calc(3.65 * var(--u)));
 }
@@ -295,6 +295,65 @@ main {
 }
 
 
+/* ---------- Maker page ----------
+   In the right-hand column: the big picture with the words beside it,
+   then a row of four square pictures, each linking to a post. */
+
+.maker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  column-gap: var(--gutter);
+}
+
+.maker-intro,
+.maker-posts {
+  grid-column: 2;
+}
+
+.maker-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr);
+  column-gap: 1.5em;
+  align-items: start;
+}
+
+.maker-intro img {
+  width: 100%;
+}
+
+.maker-text {
+  line-height: 1.15;     /* tighter, as in the sketch, so the words sit beside the picture */
+}
+
+.maker-text p {
+  margin: 0 0 0.9em;
+}
+
+.maker-posts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75em 1.45em;
+  margin: 0.8em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.maker-posts a {
+  display: block;
+}
+
+.maker-posts img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.maker-posts .title {
+  display: block;
+  margin-top: 0.5em;
+}
+
+
 /* ---------- A single project's page ---------- */
 
 .project-image {
@@ -304,6 +363,13 @@ main {
 
 .project-link {
   overflow-wrap: anywhere;
+}
+
+/* A small stand-in picture, shown at its own size until the
+   full-size one arrives. */
+.project-image.placeholder {
+  width: auto;
+  max-width: 100%;
 }
 
 
@@ -411,7 +477,7 @@ main {
    headline, so it goes back above the content, full width. */
 @media (max-width: 64rem) {
   main > h1,
-  main > h1 + :is(.future, .projects, .lead, .ledger) {
+  main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
     grid-row: auto;
   }
 
@@ -419,7 +485,7 @@ main {
     max-width: none;
   }
 
-  main > h1 + :is(.future, .projects, .lead, .ledger) {
+  main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
     margin-top: 2rem;
   }
 }
@@ -449,6 +515,16 @@ main {
   }
 
   .projects ul {
+    grid-column: 1;
+  }
+
+  .maker {
+    grid-template-columns: var(--right);
+    justify-content: end;
+  }
+
+  .maker-intro,
+  .maker-posts {
     grid-column: 1;
   }
 
@@ -497,6 +573,19 @@ main {
   }
 
   .projects ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Maker: the words go under the big picture, and two posts across. */
+  .maker-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .maker-text {
+    margin-top: 1.25em;
+  }
+
+  .maker-posts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

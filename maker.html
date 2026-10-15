@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>maker</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The header is the same on every page. aria-current marks where you
+       are, and style.css colours that link magenta. -->
+  <header class="masthead">
+    <a class="name" href="index.html">jon rogers</a>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="cv.html">cv</a></li>
+        <li><a href="publications.html">publications</a></li>
+        <li><a href="maker.html" aria-current="page">maker</a></li>
+        <li><a href="thoughts.html">thoughts</a></li>
+        <li><a href="open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <picture class="logo">
+      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+    </picture>
+  </header>
+
+  <main id="main">
+
+    <h1>resisting big tech <span class="accent line">through making</span></h1>
+
+    <!--
+      The maker page. The big picture and the words beside it stay put.
+      Below them, each small square links to a post in the maker folder.
+      To add a post: make its page in maker/, put a square picture in
+      images/maker/, then copy one <li> below and change it.
+      The words are Jon's, exactly as written.
+    -->
+    <section class="maker" aria-label="Maker">
+      <div class="maker-intro">
+        <img src="images/maker/workshop.jpg" width="373" height="499"
+          alt="A workbench mid-project: tools, wires and boxes of parts everywhere, a chair with a jumper over it, and laptops on the floor.">
+        <div class="maker-text">
+          <p>Atoms are messy!</p>
+          <p>The image of the tidy maker space feels a myth. The perfectly organised workshop is a mile away from the middle of a project.</p>
+          <p>Following an idea from code to a physical object is like pulling on multiple threads - unravelling the idea and shaping it into something.</p>
+          <p>Here i want to pull at these threads and show my working…</p>
+        </div>
+      </div>
+      <ul class="maker-posts">
+        <li>
+          <a href="maker/meshtastic-arduino.html">
+            <img src="images/maker/meshtastic-arduino-thumb.jpg" width="147" height="147" alt="">
+            <span class="title">Meshtastic &lt;&gt; Arduino</span>
+          </a>
+        </li>
+        <li>
+          <a href="maker/jmaps.html">
+            <img src="images/maker/jmaps-thumb.jpg" width="150" height="150" alt="">
+            <span class="title">jMaps</span>
+          </a>
+        </li>
+        <li>
+          <a href="maker/parasitic-location.html">
+            <img src="images/maker/parasitic-location-thumb.jpg" width="145" height="145" alt="">
+            <span class="title">Parasitic location</span>
+          </a>
+        </li>
+        <li>
+          <a href="maker/skynets-first-pixel.html">
+            <img src="images/maker/skynets-first-pixel-thumb.jpg" width="150" height="150" alt="">
+            <span class="title">Skynet’s first pixel</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
