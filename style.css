@@ -458,8 +458,8 @@ a.feature-text {
 
 /* ---------- Text pages: cv, publications and projects ----------
    Text sits in the right-hand column, the same width as the menu,
-   which keeps lines a comfortable length to read. Dates hang in the
-   left-hand column, against the gap. */
+   which keeps lines a comfortable length to read. Each date sits
+   on its own line above its entry. */
 
 .lead,
 .ledger,
@@ -525,10 +525,11 @@ a.feature-text {
   margin-top: 0.75em;
 }
 
+/* Each date sits on its own line just above its entry, in the
+   right-hand column, so nothing scrolls behind the "<" in the rail. */
 .ledger .when {
-  grid-column: 1;
-  justify-self: end;
-  text-align: right;
+  grid-column: 2;
+  justify-self: start;
   white-space: nowrap;
 }
 
