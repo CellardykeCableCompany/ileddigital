@@ -393,6 +393,28 @@ a.feature-text {
   margin-top: 0.5em;
 }
 
+/* Footnotes at the end of an essay, under a hairline like the menu's. */
+.footnotes {
+  margin-top: 1.5em;
+  padding-top: 0.75em;
+  border-top: 0.5px solid var(--ink);
+}
+
+.footnotes ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;   /* keeps the number inside the column */
+}
+
+.footnotes p {
+  display: inline;
+  margin: 0;
+}
+
+.footnote-ref sup {
+  line-height: 0;
+}
+
 /* A small stand-in picture, shown at its own size until the
    full-size one arrives. */
 .project-image.placeholder {

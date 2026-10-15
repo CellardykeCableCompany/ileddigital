@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>thoughts</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The header is the same on every page. aria-current marks where you
+       are, and style.css colours that link magenta. -->
+  <header class="masthead">
+    <a class="name" href="index.html">jon rogers</a>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="cv.html">cv</a></li>
+        <li><a href="publications.html">publications</a></li>
+        <li><a href="maker.html">maker</a></li>
+        <li><a href="thoughts.html" aria-current="page">thoughts</a></li>
+        <li><a href="open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <picture class="logo">
+      <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+    </picture>
+  </header>
+
+  <main id="main">
+
+    <h1>Thoughts</h1>
+
+    <!--
+      thoughts. The words beside the picture are Jon's, from his Word file.
+      Below, each piece links to its own page, newest first. New pieces go in
+      the thoughts folder; Resisting big tech lives at the top level because
+      the home page headline links to it.
+    -->
+    <section class="feature" aria-label="thoughts">
+      <div class="feature-intro">
+        <img src="images/thoughts/notes-400.jpg"
+          srcset="images/thoughts/notes-400.jpg 400w, images/thoughts/notes-760.jpg 760w"
+          sizes="(min-width: 48rem) 20vw, 100vw" width="400" height="533"
+          alt="A pile of handwritten sticky notes from a workshop, in different colours of pen.">
+        <div class="feature-text">
+          <p>I’ll use this space to find the quiet in my head. To throw down thoughts. Half-baked ideas. Loose proposals. Threads that dangle in mid air, not quite attached yet. They’re more for me than anyone else. But pick them up and get in touch if they resonate with you.</p>
+        </div>
+      </div>
+      <ul class="feature-posts">
+        <li>
+          <a href="thoughts/follow-that-thing.html">
+            <img src="images/thoughts/follow-that-thing-thumb.jpg" width="320" height="320" alt="">
+            <span class="title">Follow That Thing!</span>
+          </a>
+        </li>
+        <li>
+          <a href="resisting-big-tech.html">
+            <span class="no-image" aria-hidden="true"></span>
+            <span class="title">Resisting big tech</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
