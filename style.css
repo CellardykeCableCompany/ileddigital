@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No web fonts, no JavaScript. Everything here is plain CSS.
 
-   Every page links to this file as style.css?v=9. Browsers keep a copy
+   Every page links to this file as style.css?v=8. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -204,7 +204,7 @@ main > h1 {
   position: relative;
 }
 
-main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
+main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
   grid-row: 1;
   margin-top: max(2rem, calc(3.65 * var(--u)));
 }
@@ -295,55 +295,41 @@ main {
 }
 
 
-/* ---------- Feature pages: maker and open-sauce ----------
+/* ---------- Maker page ----------
    In the right-hand column: the big picture with the words beside it,
-   then rows of four square pictures, each linking to a post. */
+   then a row of four square pictures, each linking to a post. */
 
-.feature {
+.maker {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--right);
   column-gap: var(--gutter);
 }
 
-.feature-intro,
-.feature-posts {
+.maker-intro,
+.maker-posts {
   grid-column: 2;
 }
 
-.feature-intro {
+.maker-intro {
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr);
   column-gap: 1.5em;
   align-items: start;
 }
 
-.feature-intro img {
+.maker-intro img {
   width: 100%;
 }
 
-.feature-text {
+.maker-text {
   line-height: 1.15;     /* tighter, as in the sketch, so the words sit beside the picture */
 }
 
-.feature-text p {
+.maker-text p {
   margin: 0 0 0.9em;
 }
 
-/* On open-sauce the words are a link to a longer page. They look like
-   ordinary text, and turn magenta when you point at them. */
-a.feature-text {
-  display: block;
-}
-
-/* A recipe without a photo yet gets an empty square, so the grid
-   keeps its rhythm. */
-.feature-posts .no-image {
-  display: block;
-  aspect-ratio: 1;
-  border: 0.5px solid var(--ink);
-}
-
-.feature-posts {
+.maker-posts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.75em 1.45em;
@@ -352,17 +338,17 @@ a.feature-text {
   list-style: none;
 }
 
-.feature-posts a {
+.maker-posts a {
   display: block;
 }
 
-.feature-posts img {
+.maker-posts img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
 }
 
-.feature-posts .title {
+.maker-posts .title {
   display: block;
   margin-top: 0.5em;
 }
@@ -377,42 +363,6 @@ a.feature-text {
 
 .project-link {
   overflow-wrap: anywhere;
-}
-
-/* Recipes: a note such as a date or "Makes for 2+ peoples", and a
-   little space between photos and the steps around them. */
-.recipe-note {
-  margin: 0 0 1em;
-}
-
-.recipe p {
-  margin: 0 0 1em;
-}
-
-.recipe .project-image {
-  margin-top: 0.5em;
-}
-
-/* Footnotes at the end of an essay, under a hairline like the menu's. */
-.footnotes {
-  margin-top: 1.5em;
-  padding-top: 0.75em;
-  border-top: 0.5px solid var(--ink);
-}
-
-.footnotes ol {
-  margin: 0;
-  padding: 0;
-  list-style-position: inside;   /* keeps the number inside the column */
-}
-
-.footnotes p {
-  display: inline;
-  margin: 0;
-}
-
-.footnote-ref sup {
-  line-height: 0;
 }
 
 /* A small stand-in picture, shown at its own size until the
@@ -527,7 +477,7 @@ a.feature-text {
    headline, so it goes back above the content, full width. */
 @media (max-width: 64rem) {
   main > h1,
-  main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
+  main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
     grid-row: auto;
   }
 
@@ -535,7 +485,7 @@ a.feature-text {
     max-width: none;
   }
 
-  main > h1 + :is(.future, .projects, .lead, .ledger, .feature) {
+  main > h1 + :is(.future, .projects, .lead, .ledger, .maker) {
     margin-top: 2rem;
   }
 }
@@ -568,13 +518,13 @@ a.feature-text {
     grid-column: 1;
   }
 
-  .feature {
+  .maker {
     grid-template-columns: var(--right);
     justify-content: end;
   }
 
-  .feature-intro,
-  .feature-posts {
+  .maker-intro,
+  .maker-posts {
     grid-column: 1;
   }
 
@@ -627,15 +577,15 @@ a.feature-text {
   }
 
   /* Maker: the words go under the big picture, and two posts across. */
-  .feature-intro {
+  .maker-intro {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .feature-text {
+  .maker-text {
     margin-top: 1.25em;
   }
 
-  .feature-posts {
+  .maker-posts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
