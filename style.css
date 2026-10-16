@@ -492,21 +492,31 @@ a.feature-text {
   margin-top: 0.5em;
 }
 
-/* The head of a thought: its title, then the subtitle, then the date. */
+/* The head of a thought: its title, then the subtitle, then the date,
+   set close together. */
 .thought .thought-title {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.1em;
   font-size: 1.45em;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .thought .thought-subtitle {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.15em;
   font-size: 1.15em;
+  line-height: 1.3;
 }
 
 .thought .thought-date {
   margin: 0 0 1.25em;
+}
+
+/* Thought titles are shown in lowercase wherever they appear: the post,
+   the home page captions and the thoughts grid. */
+.thought .thought-title,
+.future figcaption,
+.feature[aria-label="thoughts"] .title {
+  text-transform: lowercase;
 }
 
 /* A main picture with a credit line underneath it. */
