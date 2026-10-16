@@ -678,16 +678,14 @@ a.feature-text {
 }
 
 
-/* ---------- The flip clock (home page, top right) ----------
-   Drawn by clock.js. Light tiles with dark digits on the page colour;
-   in dark mode they reverse. Sizes are set from the tile height (--h). */
-
-.page {
-  position: relative;
-}
+/* ---------- The flip clock (home page) ----------
+   Drawn by clock.js. It sits on the same line as your name: at the
+   right of the left-hand column, or of the name bar on narrow screens.
+   The digits are the same size as your name. Light tiles with dark
+   digits; in dark mode they reverse. Sizes follow the tile height (--h). */
 
 .clock {
-  --h: max(1.6rem, calc(1.65 * var(--u)));    /* tile height */
+  --h: calc(1em / 0.72);                       /* tile height: digits match the text size */
   --w: calc(var(--h) / 1.42);                  /* tile width */
   --r: calc(var(--h) * 0.12);                  /* corner rounding */
   --t: 0.34s;                                  /* half a flip */
@@ -696,11 +694,10 @@ a.feature-text {
   --digit: #343434;
   --pin: #3a3a3a;
 
-  position: absolute;
-  top: var(--top);
-  right: calc(10.73 * var(--u));
   display: flex;
+  align-self: center;
   gap: calc(var(--h) * 0.28);
+  margin-right: calc(1.6em - var(--gutter));   /* same spot as the "<" on other pages */
   background: var(--paper);
 }
 
@@ -897,6 +894,10 @@ a.feature-text {
     margin-right: 0;
   }
 
+  .clock {
+    margin-right: 0;
+  }
+
   .menu {
     order: 3;
     margin-top: 0.75rem;
@@ -991,10 +992,6 @@ a.feature-text {
 @media (max-width: 40rem) {
   .page {
     padding-inline: 1.25rem;
-  }
-
-  .clock {
-    right: 1.25rem;
   }
 
   .projects ul {
