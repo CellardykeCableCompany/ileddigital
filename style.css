@@ -296,6 +296,18 @@ h1 {
   overflow-wrap: break-word;     /* a very long word breaks rather than spill over */
 }
 
+/* A headline hidden from view but still read out by screen readers,
+   which announce a page by its main heading. */
+.rail .visually-hidden,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* A second line of headline that always starts on its own line,
    as in "through design" on the things page. */
 h1 .line {
