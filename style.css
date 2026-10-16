@@ -204,6 +204,28 @@ a:focus-visible {
   height: var(--logo);
 }
 
+/* The logo only shows when you point at your name (or reach it with the
+   keyboard). It keeps its space, so nothing moves when it appears.
+   Phones and tablets can't hover, so there the logo is always shown. */
+@media (hover: hover) {
+  .logo img {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .rail:has(.name:hover) .logo img,
+  .rail:has(.name:focus-visible) .logo img {
+    opacity: 1;
+  }
+}
+
+/* No fading for people who've asked their device for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .logo img {
+    transition: none;
+  }
+}
+
 /* Your name on the left, "<" at the right end of the column, just
    short of the menu, as in the sketch. */
 .rail-top {
