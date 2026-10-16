@@ -7,6 +7,8 @@
   <!-- An empty icon stops the browser asking the server for favicon.ico. -->
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css?v=11">
+  <!-- The flip clock at the top right. Delete this line and clock.js to remove it. -->
+  <script src="clock.js" defer></script>
 </head>
 <body>
 
@@ -20,6 +22,8 @@
     with light pencil lines on a see-through background.
   -->
   <div class="page">
+    <div class="clock" aria-hidden="true"></div>
+
     <header class="rail">
       <picture class="logo">
         <source srcset="images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">

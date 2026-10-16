@@ -678,6 +678,187 @@ a.feature-text {
 }
 
 
+/* ---------- The flip clock (home page, top right) ----------
+   Drawn by clock.js. Light tiles with dark digits on the page colour;
+   in dark mode they reverse. Sizes are set from the tile height (--h). */
+
+.page {
+  position: relative;
+}
+
+.clock {
+  --h: max(1.6rem, calc(1.65 * var(--u)));    /* tile height */
+  --w: calc(var(--h) / 1.42);                  /* tile width */
+  --r: calc(var(--h) * 0.12);                  /* corner rounding */
+  --t: 0.34s;                                  /* half a flip */
+  --tile-top: #f4f4f2;
+  --tile-bot: #eaeae7;
+  --digit: #343434;
+  --pin: #3a3a3a;
+
+  position: absolute;
+  top: var(--top);
+  right: calc(10.73 * var(--u));
+  display: flex;
+  gap: calc(var(--h) * 0.28);
+  background: var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  .clock {
+    --tile-top: #2e2e2e;
+    --tile-bot: #272727;
+    --digit: #eeeeee;
+    --pin: #9a9a9a;
+  }
+}
+
+.clock .pair {
+  display: flex;
+  gap: calc(var(--h) * 0.1);
+}
+
+.clock .tile {
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  perspective: calc(var(--h) * 3.4);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
+}
+
+.clock .half,
+.clock .flap {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+/* each number is full height inside both halves, so they join up */
+.clock .num {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--h);
+  line-height: var(--h);
+  font-size: calc(var(--h) * 0.72);
+  text-align: center;
+  color: var(--digit);
+  font-variant-numeric: tabular-nums;
+}
+
+.clock .half.top,
+.clock .flap.fold {
+  top: 0;
+  border-radius: var(--r) var(--r) 0 0;
+  background: var(--tile-top);
+}
+
+.clock .half.bot,
+.clock .flap.unfold {
+  bottom: 0;
+  border-radius: 0 0 var(--r) var(--r);
+  background: var(--tile-bot);
+}
+
+.clock .half.top .num,
+.clock .flap.fold .num {
+  top: 0;
+}
+
+.clock .half.bot .num,
+.clock .flap.unfold .num {
+  top: -100%;
+}
+
+/* shading that makes the flaps look like they fold */
+.clock .shade {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.clock .flap.fold .shade {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.clock .flap.unfold .shade {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.clock .flap {
+  z-index: 2;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.clock .flap.fold {
+  transform-origin: 50% 100%;
+  transform: rotateX(0deg);
+}
+
+.clock .flap.unfold {
+  transform-origin: 50% 0%;
+  transform: rotateX(90deg);
+}
+
+.clock .flap.fold.run {
+  animation: clock-fold var(--t) cubic-bezier(0.36, 0, 0.66, -0.05) forwards;
+}
+
+.clock .flap.unfold.run {
+  animation: clock-unfold var(--t) cubic-bezier(0.34, 1.05, 0.64, 1) var(--t) forwards;
+}
+
+.clock .flap.fold.run .shade {
+  animation: clock-shade-in var(--t) ease-in forwards;
+}
+
+.clock .flap.unfold.run .shade {
+  animation: clock-shade-out var(--t) ease-out var(--t) forwards;
+}
+
+@keyframes clock-fold { from { transform: rotateX(0deg); } to { transform: rotateX(-90deg); } }
+@keyframes clock-unfold { from { transform: rotateX(90deg); } to { transform: rotateX(0deg); } }
+@keyframes clock-shade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes clock-shade-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* the seam across the middle, and the little hinge pins */
+.clock .tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 5;
+}
+
+.clock .pin {
+  position: absolute;
+  top: 50%;
+  width: calc(var(--h) * 0.08);
+  height: calc(var(--h) * 0.16);
+  background: var(--pin);
+  transform: translateY(-50%);
+  z-index: 6;
+  border-radius: 1px;
+}
+
+.clock .pin.l { left: calc(var(--h) * -0.04); }
+.clock .pin.r { right: calc(var(--h) * -0.04); }
+
+@media (prefers-reduced-motion: reduce) {
+  .clock {
+    --t: 0.16s;
+  }
+}
+
+
 /* ---------- Narrower windows ---------- */
 
 /* Below about 1024px there's no room for a rail. Everything stacks:
@@ -810,6 +991,10 @@ a.feature-text {
 @media (max-width: 40rem) {
   .page {
     padding-inline: 1.25rem;
+  }
+
+  .clock {
+    right: 1.25rem;
   }
 
   .projects ul {
