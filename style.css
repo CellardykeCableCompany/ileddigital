@@ -492,7 +492,7 @@ a.feature-text {
   margin-top: 0.5em;
 }
 
-/* The head of a thought: its title, then the date, then the subtitle. */
+/* The head of a thought: its title, then the subtitle, then the date. */
 .thought .thought-title {
   margin: 0 0 0.35em;
   font-size: 1.45em;
@@ -500,13 +500,13 @@ a.feature-text {
   line-height: 1.25;
 }
 
-.thought .thought-date {
-  margin: 0 0 0.25em;
+.thought .thought-subtitle {
+  margin: 0 0 0.35em;
+  font-size: 1.15em;
 }
 
-.thought .thought-subtitle {
+.thought .thought-date {
   margin: 0 0 1.25em;
-  font-size: 1.15em;
 }
 
 /* A main picture with a credit line underneath it. */
@@ -646,6 +646,11 @@ a.feature-text {
   overflow-wrap: anywhere;
 }
 
+
+/* On the home page each thought follows the one above, with space between. */
+.future + .future {
+  margin-top: max(3rem, calc(5 * var(--u)));
+}
 
 /* On the home page the picture and its handwritten caption link to the
    featured thought. The caption stays magenta, turning dark on hover. */
