@@ -492,6 +492,23 @@ a.feature-text {
   margin-top: 0.5em;
 }
 
+/* The head of a thought: its title, then the date, then the subtitle. */
+.thought .thought-title {
+  margin: 0 0 0.35em;
+  font-size: 1.45em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.thought .thought-date {
+  margin: 0 0 0.25em;
+}
+
+.thought .thought-subtitle {
+  margin: 0 0 1.25em;
+  font-size: 1.15em;
+}
+
 /* A main picture with a credit line underneath it. */
 .lead figure {
   margin: 0 0 1.5em;
@@ -630,6 +647,22 @@ a.feature-text {
 }
 
 
+/* On the home page the picture and its handwritten caption link to the
+   featured thought. The caption stays magenta, turning dark on hover. */
+.future .feature-link {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.future .feature-link img {
+  width: 100%;
+}
+
+.future figcaption a:hover {
+  color: var(--ink);
+}
+
+
 /* ---------- Narrower windows ---------- */
 
 /* Below about 1024px there's no room for a rail. Everything stacks:
@@ -702,7 +735,8 @@ a.feature-text {
     grid-row: 1;
   }
 
-  .future img {
+  .future img,
+  .future .feature-link {
     grid-column: 1;
     grid-row: 2;
   }
