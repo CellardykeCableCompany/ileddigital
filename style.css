@@ -1,9 +1,50 @@
 /* ileddigital: the only stylesheet.
-   No web fonts, no JavaScript. Everything here is plain CSS.
+   No JavaScript, and nothing loaded from other sites.
 
    Every page links to this file as style.css?v=11. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
+
+
+/* ---------- The typeface: Inter ----------
+   Inter, by Rasmus Andersson (rsms.me/inter), hosted here on the site
+   itself so visitors never connect to anyone else. It's free under the
+   SIL Open Font License (fonts/Inter-LICENSE.txt). Each file has been
+   trimmed to the letters this site uses (English and European accents,
+   plus punctuation), about 18 KB each. Browsers only fetch the bold and
+   italic files on pages that use them. */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter-BoldItalic.woff2") format("woff2");
+}
 
 
 /* ---------- Settings ----------
@@ -15,11 +56,11 @@
   --ink: #000000;
   --magenta: #ff00ff;       /* ZX Spectrum: INK 3, BRIGHT 1 */
 
-  /* Typefaces. Each list is tried in order; the first one the device
-     has is used. Courier New and Noteworthy are built into every Mac
-     and iPhone; the others are the closest matches on Windows,
-     Android and Linux. */
-  --type: "Courier New", Courier, "Liberation Mono", serif-monospace, monospace;
+  /* Typefaces. Each list is tried in order. Inter comes with the site
+     (see the top of this file); the others are only used while it loads.
+     Noteworthy, for the handwritten caption, is built into every Mac and
+     iPhone; the others are the closest matches elsewhere. */
+  --type: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --hand: Noteworthy, "Ink Free", "Segoe Print", casual, cursive;
 
   /* The layout is measured the way the Keynote sketch was drawn.
