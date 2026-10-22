@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small talk.</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css?v=12">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../thoughts.html" aria-label="Back to thoughts">&lt;</a>
+      </div>
+      <!--
+      A thought, word for word from Jon's Word file (thoughts.docx).
+      The picture's alt text is a draft by Claude: please rewrite it.
+      Under the picture is a video. It's an ordinary <video> with the
+      browser's own controls, so no JavaScript. preload="none" means
+      nothing is downloaded until someone presses play; until then the
+      browser shows the still (poster) from 5 seconds in.
+      -->
+      
+      <h1>thoughts</h1>
+    </header>
+
+    <nav class="menu" aria-label="Main">
+      <ul>
+        <li><a href="../projects.html">things</a></li>
+        <li><a href="../cv.html">cv</a></li>
+        <li><a href="../publications.html">publications</a></li>
+        <li><a href="../maker.html">maker</a></li>
+        <li><a href="../thoughts.html" aria-current="true">thoughts</a></li>
+        <li><a href="../open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+  
+      <div class="lead thought">
+        <h2 class="thought-title">Small talk.</h2>
+        <p class="thought-subtitle">Welcome to Wonderland.</p>
+        <p class="thought-date">22nd October 2026. From a kitchen table in Dundee. 2pm.</p>
+        <figure class="project-figure">
+          <img class="project-image" src="../images/thoughts/small-talk-720.jpg"
+            width="720" height="990"
+            alt="An old Alice in Wonderland playing card, number 4, titled The Bottle: a small red bottle with a paper label reading DRINK ME.">
+          <figcaption class="credit">Image credit: <a href="https://picryl.com/media/alice-in-wonderland-cards-8d3533">https://picryl.com/media/alice-in-wonderland-cards-8d3533</a></figcaption>
+        </figure>
+        <figure class="project-figure">
+          <video class="project-image" controls preload="none" playsinline
+            width="1920" height="1080"
+            poster="../images/thoughts/small-talk-video-720.jpg">
+            <source src="../video/small-talk.mp4" type="video/mp4">
+            <a href="../video/small-talk.mp4">Download the video (MP4, 22 MB)</a>
+          </video>
+          <figcaption class="credit">Video, 6 mins 5 secs</figcaption>
+        </figure>
+        <p>Small.</p>
+        <p>Can I ask you all to turn to the imaginary “drink me” bottle sitting next to you. I need you all to come with me through this tiny door. Like Alice entering Wonderland. I want you to join me in the wondrous world of tiny. In this case tiny ML.</p>
+        <p>I want to draw on three inspirations for this.</p>
+        <p>1. <em>Small Is Beautiful: Economics as if People Mattered</em>, by E.F. Schumacher (1973). I mean we can stop at the title. AI as if people mattered. “There can be 'growth' towards a limited objective, but there cannot be unlimited generalised growth.”</p>
+        <p>2. There’s Plenty of Room at the Bottom: An invitation to enter a new field of physics, by Richard Feynman (1960). In it he talks about the ridiculousness of building a computer the size of the Pentagon - “we don’t have enough materials to make it” “we don’t have enough power to power it”.</p>
+        <p>3. The designers Charles and Ray Eames and their film Powers of 10. <a href="https://www.youtube.com/watch?v=0fKBhvDjuy0">https://www.youtube.com/watch?v=0fKBhvDjuy0</a></p>
+        <p>All references from before I started to write my first code aged 11 on a ZX Spectrum. All three hold now. Can we not stop and pause and wonder at the small, the tiny, the little? Can we shift the narrative from the first half of the Eames film to the second? From 10X to 0.1X (Tenth X?). To explore the room at the bottom. To find the beauty in the small.</p>
+        <p>Go on, take another sip - shrink into another world.</p>
+        <p><em>“Alice opened the door and found that it led into a small passage, not much larger than a rat-hole: she knelt down and looked along the passage into the loveliest garden you ever saw.”</em> Sounds like rewilding to me!</p>
+        <p>1.&nbsp;<a href="https://www.daastol.com/books/Schumacher%20(1973)%20Small%20is%20Beautiful.pdf">https://www.daastol.com/books/Schumacher%20(1973)%20Small%20is%20Beautiful.pdf</a></p>
+        <p>2.&nbsp;<a href="https://calteches.library.caltech.edu/47/2/1960Bottom.pdf">https://calteches.library.caltech.edu/47/2/1960Bottom.pdf</a></p>
+        <p>3.&nbsp;<a href="https://www.youtube.com/watch?v=0fKBhvDjuy0">https://www.youtube.com/watch?v=0fKBhvDjuy0</a></p>
+      </div>
+  
+    </main>
+  </div>
+
+</body>
+</html>
