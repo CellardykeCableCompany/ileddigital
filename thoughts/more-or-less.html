@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>More or Less?</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css?v=12">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../thoughts.html" aria-label="Back to thoughts">&lt;</a>
+      </div>
+      <!--
+      A thought, word for word from Jon's Word file (thoughts.docx).
+      The picture's alt text is a draft by Claude: please rewrite it.
+      Under the picture is a video. It's an ordinary <video> with the
+      browser's own controls, so no JavaScript. preload="none" means
+      nothing is downloaded until someone presses play; until then the
+      browser shows the still (poster) from 6 seconds in.
+      -->
+      
+      <h1>thoughts</h1>
+    </header>
+
+    <nav class="menu" aria-label="Main">
+      <ul>
+        <li><a href="../projects.html">things</a></li>
+        <li><a href="../cv.html">cv</a></li>
+        <li><a href="../publications.html">publications</a></li>
+        <li><a href="../maker.html">maker</a></li>
+        <li><a href="../thoughts.html" aria-current="true">thoughts</a></li>
+        <li><a href="../open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+  
+      <div class="lead thought">
+        <h2 class="thought-title">More or Less?</h2>
+        <p class="thought-subtitle">Understanding More Than Human in Design.</p>
+        <p class="thought-date">4th November 2026</p>
+        <figure class="project-figure">
+          <img class="project-image" src="../images/thoughts/more-or-less-720.jpg"
+            srcset="../images/thoughts/more-or-less-720.jpg 720w, ../images/thoughts/more-or-less-1080.jpg 1080w"
+            sizes="(min-width: 48rem) 37vw, 100vw"
+            width="720" height="462"
+            alt="An illustration of rice paddies at sunset. Farmers bend to plant seedlings in the flooded fields, some wearing exoskeletons on their backs, beside a poster on a pole that reads Exoskeleton Farming. Palm trees, wind turbines and a patched-together building stand in the distance, and a solar panel is fixed high in a tree.">
+          <figcaption class="credit">Image Credit: <a href="https://monkeyverse.in/about-us/">https://monkeyverse.in/about-us/</a></figcaption>
+        </figure>
+        <figure class="project-figure">
+          <video class="project-image" controls preload="none" playsinline
+            width="1920" height="1080"
+            poster="../images/thoughts/more-or-less-video-720.jpg">
+            <source src="../video/more-or-less.mp4" type="video/mp4">
+            <a href="../video/more-or-less.mp4">Download the video (MP4, 19 MB)</a>
+          </video>
+          <figcaption class="credit">Video, 5 mins 10 secs</figcaption>
+        </figure>
+        <p>More Than Human design is a big topic right now. The trouble is, the language around it is hard for design students, and me, to get my head around. It comes from a deeply academic knotty thorny literary landscape. If the route to More Than Human was where we want to get to, the path there is full of dense wordy undergrowth. Hack your way through with a verbal machete? No! I mean, that’s playing the exact same role that designers have played with the actual forests and landscapes of our planet.</p>
+        <p>More Than Human asks us on the one hand to do “more” but at the same time to do “less”.</p>
+        <p>Two hardcore books to read - and you should.</p>
+        <p>Donna Haraway’s <a href="https://www.dukeupress.edu/staying-with-the-trouble">Staying with the Trouble: Making Kin in the Chthulucene</a></p>
+        <p>Ron Wakkary’s <a href="https://direct.mit.edu/books/monograph/5175/Things-We-Could-DesignFor-More-Than-Human-Centered">Things We Could Design: For More Than Human-Centered Worlds</a></p>
+        <p>Take time to read and re-read these important books. What I’m saying here is neither a summary nor a review of them. Just read them.</p>
+        <p>But what I <strong>do</strong> want to talk to you about is where my head is at with where More Than Human Centred Design comes from. For me it represents the inaccessibility of much of academic writing. It is writing for the people who would read the book. It is written for publishers who want to sell the book to the person that it is already read for. It probably isn’t written for you. But actually, that’s exactly why you should read them!</p>
+        <p>More Than Human Centred Design. What an unusual term. It’s like saying “More Than Peanut Butter on Toast”. I get that you are asking for more than peanut butter - but what else! Is this jelly, or jam or marmite or bananas or what? Asking for More Than Human does not say what it is.</p>
+        <p>It feels un-design.</p>
+        <p>So let’s bring it back to design.</p>
+        <p>Here’s how I imagine it came about.</p>
+        <p>Side note - I use imaginary scenarios to explain tough concepts in the same way that mathematicians use imaginary numbers to reach real answers from seemingly impossible positions. It’s a route to something real, via something I imagine.</p>
+        <p>Let's go to an imaginary design-studio meeting in the ether, where all the decisions about the language of design are being formed (by I’d love to think the most wonderful diverse collection of people from all eras of history…Sadly it wasn’t - but that is for another discussion).</p>
+        <p>The design studio are discussing how to design for a phone. The one that’s in your pocket - right there. “Well this phone is unusual, it has a big typewriter that I have to type machine code into, we need to make this more usable.” “Good idea, let’s put the user, instead of technology, at the centre of the experience”. “We can call this USER CENTRED DESIGN.” “Yes great, and let’s make everything user friendly”. “Good times”. “Ah but wait, people around the world are suffering. Focussing design on the user of technology ignores too many of the challenges people are facing. Food. Shelter. Safety. How can design be more centred on people not technology”. “Good point! We can call this HUMAN CENTRED DESIGN”. And roll on a few more years. The world is heating up. The world’s resources can’t keep up. The phone is now a computer in the cloud. A myriad of services connect you to millions of people around the world. All at once. AI is racing forward. The oceans are bleached. Rivers polluted. Forests devastated. Design is now the problem. “We need to consider design that takes the human out of the centre. To place animals, plants, fungi, water systems, the forests, nature, the earth’s materials, the earth itself, the technologies, the systems, the communities. To put all of this at the centre.” “This is so much. Why don’t we call this MORE THAN HUMAN CENTRED DESIGN - this leaves it open and ambiguous. It shows uncertainty. It folds the edges into the middle.” And so it was decided that More Than Human Centred Design would try, just try to make sense of all of the world - the known and the unknown. Yes we can design for the world, but we can’t cause harm.</p>
+        <p>Perhaps then we can go to more than human centred design to make the harms on the planet so much less. That design is for the planet. And it needs more give and less take.</p>
+        <p>Let me end with this quote from the artist Yuvraj Jha - whose image this is.</p>
+        <p><em>“It is widely understood that one of the hardest parts of farming, to put it mildly, is, farming. Labour intensive, unpredictable, and in the long run, backbreaking. And this is one of the primary reasons for the younger generation moving to the cities for a better future. This has led to fewer people working in the fields, which means less food or more technology on our farms. Neither of which is a good idea. Even though tech and automation are good overall, in the long run the health of the farm depends on the health of the farmer.”</em></p>
+      </div>
+  
+    </main>
+  </div>
+
+</body>
+</html>
