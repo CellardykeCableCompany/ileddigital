@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No JavaScript, and nothing loaded from other sites.
 
-   Every page links to this file as style.css?v=14. Browsers keep a copy
+   Every page links to this file as style.css?v=15. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -317,38 +317,38 @@ h1 .line {
 }
 
 
-/* ---------- The picture and its caption ----------
-   The picture is the same width as the menu and sits under it,
-   against the right margin. The caption sits to its left, at the
-   bottom, so it leads the eye into the picture. */
+/* ---------- The thoughts on the home page ----------
+   The thoughts are tiles, three across, under the menu and the same
+   width as it, against the right margin. Each picture has its title
+   handwritten underneath, wrapping onto more lines when it is wider
+   than the picture. */
 
 main {
   padding-bottom: max(3rem, calc(5.8 * var(--u)));
 }
 
-.future {
+.futures {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) var(--right);
-  column-gap: var(--gutter);
-  margin: max(3rem, calc(6.8 * var(--u))) 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: max(2rem, calc(3 * var(--u))) 1.45em;
+  align-items: start;
+  width: var(--right);
+  margin-left: auto;
+}
+
+.future {
+  margin: 0;
 }
 
 .future img {
-  grid-column: 2;
-  grid-row: 1;
   width: 100%;
 }
 
 .future figcaption {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-  justify-self: end;
-  padding-bottom: 0.15em;
+  margin-top: 0.35em;
   font-family: var(--hand);
   font-size: max(1.125rem, calc(1.2 * var(--u)));
   line-height: 1.2;
-  text-align: right;
   color: var(--magenta);
 }
 
@@ -683,23 +683,10 @@ a.feature-text {
 }
 
 
-/* On the home page each thought follows the one above, with space between. */
-.future + .future {
-  margin-top: max(3rem, calc(5 * var(--u)));
-}
-
 /* On the home page the picture and its handwritten caption link to the
-   featured thought. The caption stays magenta, turning dark on hover.
-   Each picture is a third of the column's width, at its left edge,
-   so it sits right beside its caption. */
+   featured thought. The caption stays magenta, turning dark on hover. */
 .future .feature-link {
-  grid-column: 2;
-  grid-row: 1;
-  width: 33.333%;
-}
-
-.future .feature-link img {
-  width: 100%;
+  display: block;
 }
 
 .future figcaption a:hover {
@@ -765,31 +752,9 @@ a.feature-text {
   }
 }
 
-/* Below about 880px there's no room for the caption beside the
-   picture, so it goes above it. The picture stays under the menu,
+/* Below about 880px the projects list moves under the menu,
    the same width. */
 @media (max-width: 55rem) {
-  .future {
-    grid-template-columns: var(--right);
-    justify-content: end;
-  }
-
-  .future figcaption {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .future img,
-  .future .feature-link {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  /* The caption is on the right here, so the picture sits under it. */
-  .future .feature-link {
-    justify-self: end;
-  }
-
   .projects {
     grid-template-columns: var(--right);
     justify-content: end;
