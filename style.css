@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No JavaScript, and nothing loaded from other sites.
 
-   Every page links to this file as style.css?v=13. Browsers keep a copy
+   Every page links to this file as style.css?v=14. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -689,10 +689,13 @@ a.feature-text {
 }
 
 /* On the home page the picture and its handwritten caption link to the
-   featured thought. The caption stays magenta, turning dark on hover. */
+   featured thought. The caption stays magenta, turning dark on hover.
+   Each picture is a third of the column's width, at its left edge,
+   so it sits right beside its caption. */
 .future .feature-link {
   grid-column: 2;
   grid-row: 1;
+  width: 33.333%;
 }
 
 .future .feature-link img {
@@ -780,6 +783,11 @@ a.feature-text {
   .future .feature-link {
     grid-column: 1;
     grid-row: 2;
+  }
+
+  /* The caption is on the right here, so the picture sits under it. */
+  .future .feature-link {
+    justify-self: end;
   }
 
   .projects {
