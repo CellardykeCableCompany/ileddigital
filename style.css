@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No JavaScript, and nothing loaded from other sites.
 
-   Every page links to this file as style.css?v=15. Browsers keep a copy
+   Every page links to this file as style.css?v=16. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -55,6 +55,7 @@
   --paper: #ffffff;
   --ink: #000000;
   --magenta: #ff00ff;       /* ZX Spectrum: INK 3, BRIGHT 1 */
+  --label: #ffffff;         /* behind the thing/make/thought/sauce labels */
 
   /* Typefaces. Each list is tried in order. Inter comes with the site
      (see the top of this file); the others are only used while it loads.
@@ -89,6 +90,7 @@
   :root {
     --paper: #1b1b1b;
     --ink: #f0f0f0;
+    --label: #000000;
     color-scheme: dark;
   }
 }
@@ -540,7 +542,7 @@ a.feature-text {
 /* Thought titles are shown in lowercase wherever they appear: the post,
    the home page captions and the thoughts grid. */
 .thought .thought-title,
-.future figcaption,
+.future[data-tag="thought"] figcaption,
 .feature[aria-label="thoughts"] .title {
   text-transform: lowercase;
 }
@@ -684,9 +686,25 @@ a.feature-text {
 
 
 /* On the home page the picture and its handwritten caption link to the
-   featured thought. The caption stays magenta, turning dark on hover. */
+   post. The caption stays magenta, turning dark on hover. */
 .future .feature-link {
   display: block;
+  position: relative;
+}
+
+/* Each tile's label (thing, make, thought or sauce) sits just inside
+   the bottom-left corner of its picture, handwritten like the title:
+   magenta on white, or on black in dark mode. */
+.future .tag {
+  position: absolute;
+  left: 0.2em;
+  bottom: 0.35em;
+  padding: 0.15em 0.15em 0;
+  font-family: var(--hand);
+  font-size: max(0.95rem, calc(0.96 * var(--u)));
+  line-height: 1.15;
+  color: var(--magenta);
+  background: var(--label);
 }
 
 .future figcaption a:hover {

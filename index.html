@@ -6,7 +6,7 @@
   <title>jon rogers</title>
   <!-- An empty icon stops the browser asking the server for favicon.ico. -->
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -46,70 +46,253 @@
 
     <main id="main">
   
-      <!-- FEATURED THOUGHT START: every thought, newest first, in tiles
-         three across. Each picture is a 480px-wide -home-480.jpg copy,
-         as a tile is about 230px wide. -->
+      <!-- EVERYTHING START: every post on the site, in tiles three across.
+         Thoughts come first, newest first, then things, makes and sauces
+         in the order of their own pages. Each tile has a label (thing,
+         make, thought or sauce) over the top-left corner of its picture.
+         Pictures are 480px-wide -home-480.jpg copies where the original
+         is bigger, as a tile is about 230px wide. -->
     <div class="futures">
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/mozfest-2026.html">
           <img src="images/thoughts/mozfest-2026-home-480.jpg"
             width="480" height="534"
             alt="A hand points up at a yellow Mozilla Festival Barcelona banner strung across the entrance to the venue, a concrete building where a man with a backpack is walking in.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/mozfest-2026.html">MozFest 2026</a></figcaption>
       </figure>
 
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/more-or-less.html">
           <img src="images/thoughts/more-or-less-home-480.jpg"
-            loading="lazy"
             width="480" height="308"
             alt="An illustration of rice paddies at sunset. Farmers bend to plant seedlings in the flooded fields, some wearing exoskeletons on their backs, beside a poster on a pole that reads Exoskeleton Farming. Palm trees, wind turbines and a patched-together building stand in the distance, and a solar panel is fixed high in a tree.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/more-or-less.html">More or Less?</a></figcaption>
       </figure>
 
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/small-talk.html">
           <img src="images/thoughts/small-talk-home-480.jpg"
-            loading="lazy"
             width="480" height="391"
             alt="A small red bottle with a paper label reading DRINK ME, from an old Alice in Wonderland playing card.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/small-talk.html">Small talk.</a></figcaption>
       </figure>
 
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/making-speculative-futures-work.html">
           <img src="images/thoughts/making-speculative-futures-work-home-480.jpg"
             loading="lazy"
             width="480" height="277"
             alt="Rewilding the Internet: an illustrated map of a river winding through farms, villages and a town, where people gather to make, mend and share technology together. In one corner, a factory carries the Google, Apple and Microsoft logos.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/making-speculative-futures-work.html">Making speculative futures work</a></figcaption>
       </figure>
 
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/lets-rewild-the-internet.html">
           <img src="images/thoughts/lets-rewild-the-internet-home-480.jpg"
             loading="lazy"
             width="480" height="270"
             alt="An illustration of two places side by side. On the left, in a Scottish harbour-town workshop, people make and mend electronics around a shared table under a blackboard headed ReWild Notices. On the right, a family in an Indian village courtyard 3D print, share food and look after a baby.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/lets-rewild-the-internet.html">Let’s rewild the internet…</a></figcaption>
       </figure>
 
-      <figure class="future">
+      <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/follow-that-thing.html">
           <img src="images/thoughts/follow-that-thing-home-480.jpg"
             loading="lazy"
             width="480" height="227"
             alt="Two photos: a dinner of black beans, rice and dips laid out on a wooden table, and the packaging it came from (tins of black beans and tomatoes, a bag of rice, a yoghurt pot and an avocado) on a chopping board.">
+          <span class="tag">thought</span>
         </a>
         <figcaption><a href="thoughts/follow-that-thing.html">Follow That Thing!</a></figcaption>
       </figure>
+
+      <figure class="future" data-tag="thing">
+        <a class="feature-link" href="projects/pegbits.html">
+          <img src="images/projects/pegbits-home-480.jpg"
+            loading="lazy"
+            width="480" height="320"
+            alt="pegBits: a small device built on a teal pegboard, with a screen in a white frame and a pink carrying cord.">
+          <span class="tag">thing</span>
+        </a>
+        <figcaption><a href="projects/pegbits.html">pegBits</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="thing">
+        <a class="feature-link" href="projects/selfreflector.html">
+          <img src="images/projects/selfreflector-home-480.jpg"
+            loading="lazy"
+            width="480" height="262"
+            alt="A man in a flat cap and scarf, seen through the copper ring of the SelfReflector mirror.">
+          <span class="tag">thing</span>
+        </a>
+        <figcaption><a href="projects/selfreflector.html">SelfReflector</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="thing">
+        <a class="feature-link" href="projects/hicams.html">
+          <img src="images/projects/hicams-home-480.jpg"
+            loading="lazy"
+            width="480" height="631"
+            alt="A group of hiCams: small round cameras and screens on wire legs, gathered around a twig sculpture.">
+          <span class="tag">thing</span>
+        </a>
+        <figcaption><a href="projects/hicams.html">hiCams</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="make">
+        <a class="feature-link" href="maker/meshtastic-arduino.html">
+          <img src="images/maker/meshtastic-arduino-thumb.jpg"
+            loading="lazy"
+            width="147" height="147"
+            alt="A Meshtastic radio board and an Arduino wired together on a breadboard.">
+          <span class="tag">make</span>
+        </a>
+        <figcaption><a href="maker/meshtastic-arduino.html">Meshtastic &lt;&gt; Arduino</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="make">
+        <a class="feature-link" href="maker/jmaps.html">
+          <img src="images/maker/jmaps-thumb.jpg"
+            loading="lazy"
+            width="150" height="150"
+            alt="A white 3D-printed frame holding a small screen, resting on a hand-drawn paper sketch on a teal pegboard.">
+          <span class="tag">make</span>
+        </a>
+        <figcaption><a href="maker/jmaps.html">jMaps</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="make">
+        <a class="feature-link" href="maker/parasitic-location.html">
+          <img src="images/maker/parasitic-location-thumb.jpg"
+            loading="lazy"
+            width="145" height="145"
+            alt="A hand holding up a small HDMI LCD screen showing app icons.">
+          <span class="tag">make</span>
+        </a>
+        <figcaption><a href="maker/parasitic-location.html">Parasitic location</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="make">
+        <a class="feature-link" href="maker/skynets-first-pixel.html">
+          <img src="images/maker/skynets-first-pixel-thumb.jpg"
+            loading="lazy"
+            width="150" height="150"
+            alt="A laptop showing code in a terminal, beside a 3D printer.">
+          <span class="tag">make</span>
+        </a>
+        <figcaption><a href="maker/skynets-first-pixel.html">Skynet’s first pixel</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/time-and-spice.html">
+          <img src="images/open-sauce/kitchen.jpg"
+            loading="lazy"
+            width="375" height="499"
+            alt="A busy kitchen hob: pans steaming, a curry bubbling with a wooden spoon in it, jars of spices on the shelves behind.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/time-and-spice.html">adventures in time and spice</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/aloo-scones.html">
+          <img src="images/open-sauce/aloo-scones-home-480.jpg"
+            loading="lazy"
+            width="480" height="640"
+            alt="Four aloo scones browning in a cast-iron pan.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/aloo-scones.html">Aloo Scones</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/satay-omelette-noodles.html">
+          <img src="images/open-sauce/satay-omelette-noodles-home-480.jpg"
+            loading="lazy"
+            width="480" height="640"
+            alt="A folded satay omelette, well browned, in a cast-iron pan.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/satay-omelette-noodles.html">Satay omelette noodles</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/a-template-for-a-kedgeree.html">
+          <img src="images/open-sauce/a-template-for-a-kedgeree-home-480.jpg"
+            loading="lazy"
+            width="480" height="640"
+            alt="A pan of kedgeree: spiced rice with haddock, egg, coriander and dried red chillies.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/a-template-for-a-kedgeree.html">A template for a kedgeree</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/aakash-eggs.html">
+          <img src="images/open-sauce/aakash-eggs-home-480.jpg"
+            loading="lazy"
+            width="480" height="640"
+            alt="Aakash eggs on brown rice in a blue-patterned bowl, topped with coriander and a dried red chilli.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/aakash-eggs.html">Aakash eggs</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/crab-barlyani.html">
+          <img src="images/open-sauce/crab-barlyani-home-480.jpg"
+            loading="lazy"
+            width="480" height="360"
+            alt="A hand-painted sign on a wooden shed by the harbour: Lobster, cooked while you wait, also dressed crab.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/crab-barlyani.html">Crab Barlyani</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/barley-risotto.html">
+          <img src="images/open-sauce/barley-risotto-home-480.jpg"
+            loading="lazy"
+            width="480" height="360"
+            alt="Barley risotto on a pale green plate, piled with rocket and grated parmesan.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/barley-risotto.html">Barley risotto</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/barley-kedge.html">
+          <img src="images/open-sauce/barley-kedge-home-480.jpg"
+            loading="lazy"
+            width="480" height="360"
+            alt="Barley kedge in a steel pan with a wooden spoon, topped with rocket.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/barley-kedge.html">Barley kedge</a></figcaption>
+      </figure>
+
+      <figure class="future" data-tag="sauce">
+        <a class="feature-link" href="open-sauce/barleyani.html">
+          <img src="images/open-sauce/barleyani-home-480.jpg"
+            loading="lazy"
+            width="480" height="360"
+            alt="Barleyani in a dark blue bowl with greens and a spoon of hot mango pickle, jars of pickle behind.">
+          <span class="tag">sauce</span>
+        </a>
+        <figcaption><a href="open-sauce/barleyani.html">Barleyani</a></figcaption>
+      </figure>
     </div>
-    <!-- FEATURED THOUGHT END -->
+    <!-- EVERYTHING END -->
   
     </main>
   </div>
