@@ -1,7 +1,7 @@
 /* ileddigital: the only stylesheet.
    No JavaScript, and nothing loaded from other sites.
 
-   Every page links to this file as style.css?v=12. Browsers keep a copy
+   Every page links to this file as style.css?v=13. Browsers keep a copy
    for a while, so when this file changes, raise that number in each
    page's <link> line too. That makes browsers fetch the new version. */
 
@@ -511,6 +511,30 @@ a.feature-text {
 
 .thought .thought-date {
   margin: 0 0 1.25em;
+}
+
+/* Headings partway through a thought, in bold at the size of the text. */
+.thought h3 {
+  margin: 1.75em 0 0.5em;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* A box set apart from the text, like "The history of AI" in
+   MozFest 2026. Its border is a hairline, like the menu's. */
+.thought .box {
+  margin: 1.5em 0;
+  padding: 0.9em 1em;
+  border: 0.5px solid var(--ink);
+}
+
+.thought .box > :first-child {
+  margin-top: 0;
+}
+
+.thought .box > :last-child {
+  margin-bottom: 0;
 }
 
 /* Thought titles are shown in lowercase wherever they appear: the post,

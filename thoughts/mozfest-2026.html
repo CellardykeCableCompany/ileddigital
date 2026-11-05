@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MozFest 2026</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css?v=13">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!--
+    The page frame. The rail on the left (logo, name, "<" and headline)
+    stays put while the menu and content scroll past on the right.
+    On narrow screens, the name and "<" become a bar that stays at the top.
+    The logo is a <picture>: in dark mode the browser loads the version
+    with light pencil lines on a see-through background.
+  -->
+  <div class="page">
+    <header class="rail">
+      <picture class="logo">
+        <source srcset="../images/ileddigital-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../images/ileddigital.jpg" width="194" height="236" alt="ileddigital">
+      </picture>
+      <div class="rail-top">
+        <a class="name" href="../index.html">jon rogers</a>
+        <a class="back" href="../thoughts.html" aria-label="Back to thoughts">&lt;</a>
+      </div>
+      <!--
+      A thought, word for word from Jon's Word file (thoughts.docx).
+      Partway down is a second picture, and a box set apart from the
+      text (The history of AI). Both pictures' alt text are drafts by
+      Claude: please rewrite them.
+      -->
+      
+      <h1>thoughts</h1>
+    </header>
+
+    <nav class="menu" aria-label="Main">
+      <ul>
+        <li><a href="../projects.html">things</a></li>
+        <li><a href="../cv.html">cv</a></li>
+        <li><a href="../publications.html">publications</a></li>
+        <li><a href="../maker.html">maker</a></li>
+        <li><a href="../thoughts.html" aria-current="true">thoughts</a></li>
+        <li><a href="../open-sauce.html">open-sauce</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+  
+      <div class="lead thought">
+        <h2 class="thought-title">MozFest 2026</h2>
+        <p class="thought-subtitle">Human-Scale AI</p>
+        <p class="thought-date">5th November 2026</p>
+        <figure class="project-figure">
+          <img class="project-image" src="../images/thoughts/mozfest-2026-720.jpg"
+            srcset="../images/thoughts/mozfest-2026-720.jpg 720w, ../images/thoughts/mozfest-2026-1080.jpg 1080w"
+            sizes="(min-width: 48rem) 37vw, 100vw"
+            width="720" height="801"
+            alt="A hand points up at a yellow Mozilla Festival Barcelona banner strung across the entrance to the venue, a concrete building where a man with a backpack is walking in.">
+        </figure>
+        <p>MozFest and me go back. Here’s a piece Michelle Thorne and I wrote in 2019 in the <a href="https://book.mozillafestival.org/10-years-of-activism-community-and-collaboration/a-web-of-people-and-things">open book “How To Mozfest”</a>. 2012-2019 were for me special years. It was where my research, teaching and practice grew and changed. It marked the transition from the techno-optimism of the 2000s to the techno-responsibilities that form the core of what I do now. While Big Tech was enshittifying, we were having joy! It was with this joy that I was after on my return last week.</p>
+        <p>I loved the Barcelona venue. Everything about it was perfect. I loved the people. The most diverse MozFest I’ve been to. I loved the area. Full of Catalonian life. Cafes. Chocolate shops. Bakeries. Dotted around orange tree lined lanes. When work feels like a holiday. That’s when work is working.</p>
+        <figure class="project-figure">
+          <img class="project-image" src="../images/thoughts/mozfest-2026-flipchart-720.jpg"
+            srcset="../images/thoughts/mozfest-2026-flipchart-720.jpg 720w, ../images/thoughts/mozfest-2026-flipchart-1080.jpg 1080w"
+            sizes="(min-width: 48rem) 37vw, 100vw"
+            loading="lazy"
+            width="720" height="960"
+            alt="A flip chart from the Tiny breakout group, covered in handwritten notes and sticky notes, including “need to define small”, “training as an act of joy?”, “sub 1B models that work for specific cases”, “what does 70 years of ML teach us” and “size vs legibility”.">
+        </figure>
+        <p>I was part of a session invited by <a href="https://mehan.info/">Mehan Jayasuriya</a> to explore <a href="https://events.mozillafoundation.org/e/mozilla-festival-2026/page/schedule?sessionId=433827&amp;pastSession=true">Wilding AI For People And Planet</a>. After a short intro (based on my <a href="small-talk.html">Small Talk</a> post) we dived into breakout groups. My theme was Tiny. It was rammed! I thought maybe 30 people would come to the session and we’d break out to maybe 10… there were at least 30 in our breakout. With about 15 mins to explore. What I found interesting is the challenge of Tiny being a radical break away from Large Language Models. Tiny LLMs don’t work. Yet the tension of wanting the same narrative in a more healthy way was a running thread. It shows just how much our thinking is now heavily engrained into this new model - the global reinforcement learning of LLMs as AI demonstrates just how powerful Big Tech is. Yes LLMs are powerful. Yes LLMs are AI. But AI isn’t an LLM. It’s still there to be defined. But thankfully we were not confined to this path.</p>
+        <h3>Reconsidering other models</h3>
+        <p>“Don’t forget what 70 years of machine learning have taught us!” called out one participant. While what we see in LLMs is based on the 2017 <a href="https://arxiv.org/abs/1706.03762">Transformer</a> architecture. Something that’s been on my mind for a while now and something I will return to. Some of the network architectures I am thinking of revisiting - and (hoping) to test for viability for training on a Pi or perhaps even an ESP32.</p>
+        <p>1986 <a href="https://www.nature.com/articles/323533a0">Back Propagation neural network</a></p>
+        <p>1989 <a href="https://doi.org/10.1162/neco.1989.1.4.541">Convolutional Neural Network</a></p>
+        <p>2014 <a href="https://hal.science/hal-04206682/document">Deep Learning</a></p>
+        <p>2017 <a href="https://arxiv.org/abs/1706.03762">Transformer</a></p>
+        <aside class="box" aria-label="The history of AI">
+          <h3>The history of AI</h3>
+          <p>A useful ACM series of open articles on the history of AI by Thomas Haigh. I wonder how this chapter will be written? Especially as yesterday I was reading Geoff Hinton’s reflection that the <a href="https://www.theguardian.com/uk-news/2026/nov/03/ai-godfather-geoffrey-hinton-better-off-without-ai">world might, after all, be better off without AI</a>.</p>
+          <p>1) Haigh, T. (2023) “Conjoined Twins: Artificial Intelligence and the Invention of Computer Science”, <em>CACM</em>, 66(6), pp. 33–37, <a href="https://dl.acm.org/doi/pdf/10.1145/3593007">doi:10.1145/3593007</a>.</p>
+          <p>2) Haigh, T. (2023) “There Was No ‘First AI Winter’”, <em>CACM</em>, 66(12), pp. 35–39, <a href="https://dl.acm.org/doi/pdf/10.1145/3625833">doi:10.1145/3625833</a>.</p>
+          <p>3) Haigh, T. (2024) “How the AI Boom Went Bust”, <em>CACM</em>, 67(2), pp. 22–26, <a href="https://dl.acm.org/doi/pdf/10.1145/3634901">doi:10.1145/3634901</a>.</p>
+          <p>4) Haigh, T. (2024) “Between the Booms: AI in Winter”, <em>CACM</em>, 67(11), pp. 18–23, <a href="https://dl.acm.org/doi/pdf/10.1145/3688379">doi:10.1145/3688379</a>.</p>
+          <p>5) Haigh, T. (2025) “Artificial Intelligence Then and Now”, <em>CACM</em>, 68(2), <a href="https://cacm.acm.org/opinion/artificial-intelligence-then-and-now/">online here</a>.</p>
+        </aside>
+        <p>And while I’m thinking about going back to re-explore other neural network models, it would be silly not to think about the work I did on my PhD.</p>
+        <h3><a href="https://www.esann.org/sites/default/files/proceedings/legacy/es2009-6.pdf">Weightless Neural Networks</a></h3>
+        <p>Originating from Igor Aleksander (my PhD supervisor) and John Stonham (my examiner) in 1979, weightless neural networks that essentially uses RAM as a memory location and implements a kind of nearest neighbour look up table. My instinct here, especially with tiny architectures, ESP32, Pi Pico etc being able to handle ok resolution camera images, we could look at some super fast neural-like image filtering/processing. This is probably higher on my To-Make list… hold me to this… Oh and remind me to talk to you about whether we could do this temporal hybrid weighted/weightless model - where delays are introduced (like my PhD) but this time we use back propagation (or other approach) to tune the length of the delay to learn more complex temporal sequences. Hold that thought! And why not start to play with more classical architectures like 1966 Joseph Weizenbaum <a href="https://dl.acm.org/doi/10.1145/365153.365168">Eliza engine</a>? It feels that it would be useful to revisit these models and apply to open hardware contexts, as perhaps it is here where we will find ways to make sense of sensors, use our voices in ways we’ve not considered and do simple image processing. I feel a fun Tiny Tech sprint coming on…</p>
+        <h3>AI isn’t just use! It’s training.</h3>
+        <p>Going back to the roots of neural networks in this way was part of a thread we pulled in our session on widening the conversation of AI to the training of models. For me, training of AI is where we need to be focussing. It is the foundation. The compost. The nursery ground. It is where we should be throwing our weight into. The majority of people will never experience training a neural network - despite the likelihood they are part of the data extraction machine that is harvesting every possible thing in their lives to feed the algorithmic training. That should terrify everyone. It’s like second hand smoke, but where the smoke is odour- and colourless. It was good to hear a discussion on how we can bring joy to the training process and make the labour of training more like the labour of community care groups - e.g. allotments (community gardens), museum curation, librarians, fitness groups. All these involve work, but the work is fun. We choose to do it in care of our neighbourhoods and in care of ourselves. But interestingly, this view wasn’t uniform. One member of the group called for us “to stop fetishizing training”. All the data had already been trained. All the models had been made. It was a waste of time to redo this. The approach behind this thinking is to use <a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation</a> where the trained LLM can be retrained by accessing further information - e.g. from the web. A bit like how you can have open book exams - where you can use your own intelligence and knowledge to further support it. A lot of comments in the breakout were around - yeah, just RAG your model in a new context. This is all well and good and I get it, it’s needed by communities who are locked out by the pricing of Claude, GPT etc. Open models offer LLM power, but in a more accessible way. Yes do this. But it is not changing the narrative. It is not wilding AI, it is simply making variants of the monoculture cash crops that Big Tech is proliferating the soil of the internet with.</p>
+        <p>To wild AI we need to go back to the compost heap. To add new ingredients. This means moving away from any kind of LLM and going into new territories, perhaps by going back a few steps before we move on.</p>
+      </div>
+  
+    </main>
+  </div>
+
+</body>
+</html>
