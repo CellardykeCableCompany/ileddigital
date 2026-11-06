@@ -6,7 +6,7 @@
   <title>jon rogers</title>
   <!-- An empty icon stops the browser asking the server for favicon.ico. -->
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
   
       <!-- EVERYTHING START: every post on the site, in tiles four across
          (two on phones), like the grids on the section pages.
-         Mixed together rather than grouped: the newest thought comes first,
+         Mixed together rather than grouped: the newest post comes first,
          then each kind is spread evenly through the list (thoughts newest
          first; things, makes and sauces in the order of their own pages).
          Every picture is square, so the tiles line up in neat rows:
@@ -57,6 +57,18 @@
          post (thought, thing, make or sauce) in magenta handwriting links
          to its section page, and the title in plain type links to the post. -->
     <div class="futures">
+      <figure class="future" data-tag="make">
+        <a class="feature-link" href="maker/right-for-repair.html">
+          <img src="images/maker/right-for-repair-home-480.jpg"
+            width="480" height="480"
+            alt="A coffee grinder taken apart on a green workbench, its motor, gears and a tangle of coloured wires exposed, beside a laptop playing a repair video, pliers and a dish of tiny screws.">
+        </a>
+        <figcaption>
+          <a class="kind" href="maker.html">make</a>
+          <a class="title" href="maker/right-for-repair.html">Right for repair</a>
+        </figcaption>
+      </figure>
+
       <figure class="future" data-tag="thought">
         <a class="feature-link" href="thoughts/mozfest-2026.html">
           <img src="images/thoughts/mozfest-2026-home-480.jpg"
@@ -84,6 +96,7 @@
       <figure class="future" data-tag="make">
         <a class="feature-link" href="maker/meshtastic-arduino.html">
           <img src="images/maker/meshtastic-arduino-thumb.jpg"
+            loading="lazy"
             width="147" height="147"
             alt="A Meshtastic radio board and an Arduino wired together on a breadboard.">
         </a>
